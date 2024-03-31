@@ -13,11 +13,11 @@ public class GameOne {
         while (i < 3) {
             var number = ThreadLocalRandom.current().nextInt(1000);
             System.out.println("Question: " + number);
-            userName = scanner.next();
-            if (number % 2 == 0 & userName.equals("yes")) {
+            String userAnswer = scanner.next();
+            if (number % 2 == 0 & userAnswer.equals("yes")) {
                 System.out.println("Correct!");
                 i = i + 1;
-            } else if (number % 2 != 0 & userName.equals("no")) {
+            } else if (number % 2 != 0 & userAnswer.equals("no")) {
                 System.out.println("Correct!");
                 i = i + 1;
             }
@@ -25,6 +25,6 @@ public class GameOne {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n" + "Let's try again, Bill!");
                 scanner.close();
             }
-        }
+        } System.out.println("Congratulations, " + userName);
         }
     }
