@@ -8,9 +8,9 @@ public class GameOne {
         System.out.println("Your choice: 1\n Welcome to the Brain Games!\n May I have your name?");
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!" +"Answer 'yes' if the number is even, otherwise answer 'no'");
-        var i = 0;
+        var i = 1;
 
-        while (i < 3) {
+        while (i <= 3) {
             var number = ThreadLocalRandom.current().nextInt(1000);
             System.out.println("Question: " + number);
             String userAnswer = scanner.next();
@@ -20,11 +20,11 @@ public class GameOne {
             } else if (number % 2 != 0 & userAnswer.equals("no")) {
                 System.out.println("Correct!");
                 i = i + 1;
-            }
-            else {
+            } else {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n" + "Let's try again, Bill!");
-                scanner.close();
+                return;
             }
         } System.out.println("Congratulations, " + userName);
+        scanner.close();
         }
     }
