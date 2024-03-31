@@ -21,7 +21,7 @@ public class GameOne {
                 System.out.println("Correct!");
                 i = i + 1;
             } else {
-                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n" + "Let's try again, Bill!");
+                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n" + "Let's try again, " + userName);
                 return;
             }
         } System.out.println("Congratulations, " + userName);

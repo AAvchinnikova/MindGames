@@ -6,10 +6,10 @@ public class Cli {
         Scanner scanner = new Scanner(System.in);
         var numberGame = scanner.next();
 
-        if (numberGame.equals("1")) {
+        if (numberGame.equals("2")) {
             GameOne.gameOne();
         } else if (numberGame.equals("0")) {
-            System.out.println("Exit");
+            return;
         }
         scanner.close();
     }
