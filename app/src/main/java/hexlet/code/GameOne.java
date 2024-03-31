@@ -7,14 +7,24 @@ public class GameOne {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Your choice: 1\n Welcome to the Brain Games!\n May I have your name?");
         String userName = scanner.next();
-        var number = ThreadLocalRandom.current().nextInt(1000);
         System.out.println("Hello, " + userName + "!" +"Answer 'yes' if the number is even, otherwise answer 'no'");
-        System.out.println("Question: " + number);
-        var answerPlayer = scanner.next();
-        if (number % 2 == 0 & answerPlayer.equals("yes")) {
-            System.out.println("Correct!");
-        } else {
-            System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n" + "Let's try again, Bill!");
+        var i = 0;
+
+        while (i < 3) {
+            var number = ThreadLocalRandom.current().nextInt(1000);
+            System.out.println("Question: " + number);
+            userName = scanner.next();
+            if (number % 2 == 0 & userName.equals("yes")) {
+                System.out.println("Correct!");
+                i = i + 1;
+            } else if (number % 2 != 0 & userName.equals("no")) {
+                System.out.println("Correct!");
+                i = i + 1;
+            }
+            else {
+                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n" + "Let's try again, Bill!");
+                scanner.close();
+            }
+        }
         }
     }
-}
