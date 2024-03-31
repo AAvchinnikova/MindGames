@@ -13,6 +13,8 @@ public class GameOne {
         var answerPlayer = scanner.next();
         if (number % 2 == 0 & answerPlayer.equals("yes")) {
             System.out.println("Correct!");
+        } else {
+            System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n" + "Let's try again, Bill!");
         }
     }
 }
