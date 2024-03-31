@@ -7,7 +7,7 @@ public class GameOne {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Your choice: 1\n Welcome to the Brain Games!\n May I have your name?");
         String userName = scanner.next();
-        System.out.println("Hello, " + userName + "!" +"Answer 'yes' if the number is even, otherwise answer 'no'");
+        System.out.println("Hello, " + userName + "!" + "Answer 'yes' if the number is even, otherwise answer 'no'");
         var i = 1;
 
         while (i <= 3) {
@@ -21,10 +21,10 @@ public class GameOne {
                 System.out.println("Correct!");
                 i = i + 1;
             } else {
-                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n" + "Let's try again, " + userName);
+                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n"
+                        + "Let's try again, " + userName);
                 return;
             }
         } System.out.println("Congratulations, " + userName);
-        scanner.close();
-        }
     }
+}
