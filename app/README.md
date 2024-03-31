@@ -41,6 +41,8 @@ make lint
 ```bash
 make update
 ```
+## Demo game 1 (parity check)
+https://asciinema.org/a/nXkH5reXTkEFt2K6puOTaiajv
 
 ## asdf
 
