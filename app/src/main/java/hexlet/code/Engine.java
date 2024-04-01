@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import hexlet.code.games.GameOne;
+
 import java.util.Scanner;
 
 public class Engine {
@@ -9,6 +11,9 @@ public class Engine {
         String answearUser = "";
         String answearGame = "";
         for (var i = 0; i < 3; i++) {
+            if (i > 0) {
+                System.out.println("Your answer: " + answearUser);
+            }
             switch (Integer.parseInt(numberGame)) {
                 case 1:
                     resultForUser = GameOne.gameOne(answearUser, resultForUser);
