@@ -1,8 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.RandomValues;
-
-import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GameTwo {
