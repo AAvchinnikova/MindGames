@@ -29,7 +29,7 @@ public class GameTwo {
         }
         return answer;
     }
-    public static String calculation (String resultForUser) {
+    public static String calculation(String resultForUser) {
         var mathExample = resultForUser.split(" ");
         var firstNumber = mathExample[0];
         var secondNumber = mathExample[2];
@@ -37,7 +37,7 @@ public class GameTwo {
         int result = 0;
         switch (singForCallculate) {
             case "+":
-                result = Integer.parseInt(firstNumber)+ Integer.parseInt(secondNumber);
+                result = Integer.parseInt(firstNumber) + Integer.parseInt(secondNumber);
                 break;
             case "-":
                 result = Integer.parseInt(firstNumber) - Integer.parseInt(secondNumber);
@@ -45,6 +45,8 @@ public class GameTwo {
             case "*":
                 result = Integer.parseInt(firstNumber) * Integer.parseInt(secondNumber);
                 break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + singForCallculate);
         }
         return Integer.toString(result);
     }
