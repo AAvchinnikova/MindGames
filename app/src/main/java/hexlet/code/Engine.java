@@ -11,15 +11,17 @@ public class Engine {
         for (var i = 0; i < 3; i++) {
             switch (Integer.parseInt(numberGame)) {
                 case 1:
-                    resultForUser = GameOne.gameOne(answearUser,resultForUser);
+                    resultForUser = GameOne.gameOne(answearUser, resultForUser);
                     break;
                 case 2:
                     answearGame = "";
                     break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + Integer.parseInt(numberGame));
             }
             if (!resultForUser.equals("Wrong")) {
-                System.out.println ("Question: " + resultForUser);
-                answearUser = scanner.next ();
+                System.out.println("Question: " + resultForUser);
+                answearUser = scanner.next();
             } else {
                 System.out.println("Let's try again, " + userName);
                 return;
