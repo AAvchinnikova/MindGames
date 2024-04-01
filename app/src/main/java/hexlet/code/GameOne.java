@@ -5,7 +5,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class GameOne {
     public static String gameOne(String answear, String resultForUser) {
         var number = ThreadLocalRandom.current().nextInt(1000);
-
         if (answear.isEmpty() & resultForUser.isEmpty()) {
             System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'");
             answear = Integer.toString(number);

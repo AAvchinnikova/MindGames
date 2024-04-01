@@ -3,14 +3,8 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static void engine() {
+    public static void engine(String numberGame) {
         Scanner scanner = new Scanner(System.in);
-        String numberGame = scanner.next();
-        System.out.println("Your choice: " + numberGame);
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName);
         String resultForUser = "";
         String answearUser = "";
         String answearGame = "";
@@ -24,7 +18,7 @@ public class Engine {
                     break;
             }
             if (!resultForUser.equals("Wrong")) {
-                System.out.println ("Question:" + resultForUser);
+                System.out.println ("Question: " + resultForUser);
                 answearUser = scanner.next();
             } else {
                 break;
