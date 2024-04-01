@@ -13,7 +13,7 @@ public class Engine {
         String resultForUser = "";
         String answearUser = "";
         String answearGame = "";
-        for (var i = 1; i < 3; i++) {
+        for (var i = 1; i <= 3; i++) {
             switch (Integer.parseInt(numberGame)) {
                 case 1:
                     resultForUser = GameOne.gameOne(answearUser,resultForUser);

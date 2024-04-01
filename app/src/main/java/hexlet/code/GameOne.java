@@ -9,6 +9,7 @@ public class GameOne {
         if (answear.isEmpty() & resultForUser.isEmpty()) {
             System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'");
             answear = Integer.toString(number);
+            return answear;
         } else {
             if (Integer.parseInt(resultForUser) % 2 == 0 & answear.equals("yes")) {
                 System.out.println("Correct!");
