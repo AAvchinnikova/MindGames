@@ -17,9 +17,10 @@ public class GameOne {
                 System.out.println("Correct!");
                 answear = Integer.toString(number);
             } else {
-                System.out.println("You are stupid!");
+                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
                 answear = "Wrong";
             }
-        } return answear;
+        }
+        return answear;
     }
 }

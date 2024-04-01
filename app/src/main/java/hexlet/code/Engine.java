@@ -3,12 +3,12 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static void engine(String numberGame) {
+    public static void engine(String userName, String numberGame) {
         Scanner scanner = new Scanner(System.in);
         String resultForUser = "";
         String answearUser = "";
         String answearGame = "";
-        for (var i = 1; i <= 3; i++) {
+        for (var i = 0; i < 3; i++) {
             switch (Integer.parseInt(numberGame)) {
                 case 1:
                     resultForUser = GameOne.gameOne(answearUser,resultForUser);
@@ -19,10 +19,12 @@ public class Engine {
             }
             if (!resultForUser.equals("Wrong")) {
                 System.out.println ("Question: " + resultForUser);
-                answearUser = scanner.next();
+                answearUser = scanner.next ();
             } else {
-                break;
+                System.out.println("Let's try again, " + userName);
+                return;
             }
-        } scanner.close();
+        } System.out.println("Congratulations, " + userName);
+        scanner.close();
     }
 }
