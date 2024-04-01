@@ -3,24 +3,24 @@ package hexlet.code.games;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GameOne {
-    public static String gameOne(String answear, String resultForUser) {
+    public static String gameOne(String answer, String resultForUser) {
         var number = ThreadLocalRandom.current().nextInt(1000);
-        if (answear.isEmpty() & resultForUser.isEmpty()) {
+        if (answer.isEmpty() & resultForUser.isEmpty()) {
             System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'");
-            answear = Integer.toString(number);
-            return answear;
+            answer = Integer.toString(number);
+            return answer;
         } else {
-            if (Integer.parseInt(resultForUser) % 2 == 0 & answear.equals("yes")) {
+            if (Integer.parseInt(resultForUser) % 2 == 0 & answer.equals("yes")) {
                 System.out.println("Correct!");
-                answear = Integer.toString(number);
-            } else if (Integer.parseInt(resultForUser) % 2 != 0 & answear.equals("no")) {
+                answer = Integer.toString(number);
+            } else if (Integer.parseInt(resultForUser) % 2 != 0 & answer.equals("no")) {
                 System.out.println("Correct!");
-                answear = Integer.toString(number);
+                answer = Integer.toString(number);
             } else {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                answear = "Wrong";
+                answer = "Wrong";
             }
         }
-        return answear;
+        return answer;
     }
 }

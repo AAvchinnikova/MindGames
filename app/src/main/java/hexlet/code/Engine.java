@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.games.GameOne;
+import hexlet.code.games.GameTwo;
 
 import java.util.Scanner;
 
@@ -8,25 +9,24 @@ public class Engine {
     public static void engine(String userName, String numberGame) {
         Scanner scanner = new Scanner(System.in);
         String resultForUser = "";
-        String answearUser = "";
-        String answearGame = "";
+        String answerUser = "";
         for (var i = 0; i < 3; i++) {
             if (i > 0) {
-                System.out.println("Your answer: " + answearUser);
+                System.out.println("Your answer: " + answerUser);
             }
             switch (Integer.parseInt(numberGame)) {
                 case 1:
-                    resultForUser = GameOne.gameOne(answearUser, resultForUser);
+                    resultForUser = GameOne.gameOne(answerUser, resultForUser);
                     break;
                 case 2:
-                    answearGame = "";
+                    resultForUser = GameTwo.gameTwo(answerUser, resultForUser);
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + Integer.parseInt(numberGame));
             }
             if (!resultForUser.equals("Wrong")) {
                 System.out.println("Question: " + resultForUser);
-                answearUser = scanner.next();
+                answerUser = scanner.next();
             } else {
                 System.out.println("Let's try again, " + userName);
                 return;
