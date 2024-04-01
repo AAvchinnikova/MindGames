@@ -18,6 +18,7 @@ public class GameOne {
                 System.out.println("Correct!");
                 answear = Integer.toString(number);
             } else {
+                System.out.println("You are stupid!");
                 answear = "Wrong";
             }
         } return answear;

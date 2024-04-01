@@ -22,8 +22,12 @@ public class Engine {
                     answearGame = "";
                     break;
             }
-            System.out.println ("Question:" + resultForUser);
-            answearUser = scanner.next();
-        }
+            if (!resultForUser.equals("Wrong")) {
+                System.out.println ("Question:" + resultForUser);
+                answearUser = scanner.next();
+            } else {
+                break;
+            }
+        } scanner.close();
     }
 }
