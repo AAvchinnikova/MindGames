@@ -42,6 +42,8 @@ public class Engine {
                         System.out.println("Your answer: " + answerUser);
                         System.out.println("Correct!");
                         break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + i);
                 }
             }  else {
                 System.out.println("Let's try again, " + userName);
