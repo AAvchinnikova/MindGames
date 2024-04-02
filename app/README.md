@@ -47,6 +47,9 @@ https://asciinema.org/a/nXkH5reXTkEFt2K6puOTaiajv
 ## Demo game 2 (calculator)
 https://asciinema.org/a/eI6a9ZDq5CDj6la9atzs7vaIh
 
+## Demo game 3 (GCD)
+https://asciinema.org/a/nW9cHyq5Lg9Ip1IhYXSv8zWqg
+
 ## asdf
 
 On *nix and macOS to manage Java versions we recommend using asdf https://github.com/asdf-vm/asdf.
