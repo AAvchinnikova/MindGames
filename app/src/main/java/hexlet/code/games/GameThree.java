@@ -30,7 +30,6 @@ public class GameThree {
         var secondNumber = mathExample[1];
         int firstNumberInt = Integer.parseInt(firstNumber);
         int secondNumberInt = Integer.parseInt(secondNumber);
-        int result = 0;
         while (firstNumberInt != 0 & secondNumberInt != 0) {
             if (firstNumberInt > secondNumberInt) {
                 firstNumberInt = firstNumberInt % secondNumberInt;
@@ -38,7 +37,7 @@ public class GameThree {
                 secondNumberInt = secondNumberInt % firstNumberInt;
             }
         }
-        result = firstNumberInt + secondNumberInt;
+        int result = firstNumberInt + secondNumberInt;
         return Integer.toString(result);
     }
 }
