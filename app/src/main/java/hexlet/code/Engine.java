@@ -15,7 +15,7 @@ public class Engine {
                 case 1:
                     resultForUser = GameOne.gameOne(answerUser, resultForUser);
                     break;
-                case 2:
+                case 3:
                     resultForUser = GameTwo.gameTwo(answerUser, resultForUser);
                     break;
                 default:
