@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.games.GameOne;
+import hexlet.code.games.GameThree;
 import hexlet.code.games.GameTwo;
 
 import java.util.Scanner;
@@ -18,6 +19,9 @@ public class Engine {
                 case 3:
                     resultForUser = GameTwo.gameTwo(answerUser, resultForUser);
                     break;
+                case 4:
+                    resultForUser = GameThree.gameThree(answerUser, resultForUser);
+                    break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + Integer.parseInt(numberGame));
             }
@@ -28,11 +32,6 @@ public class Engine {
                         answerUser = scanner.next();
                         break;
                     case 1:
-                        System.out.println("Your answer: " + answerUser);
-                        System.out.println("Correct!");
-                        System.out.println("Question: " + resultForUser);
-                        answerUser = scanner.next();
-                        break;
                     case 2:
                         System.out.println("Your answer: " + answerUser);
                         System.out.println("Correct!");
