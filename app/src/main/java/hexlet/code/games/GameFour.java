@@ -5,6 +5,26 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class GameFour {
 
+    public static String gameThree(String answerUser, String resultForUser) {
+        var result = lookingForMissingNumber(resultForUser);
+
+        if (answerUser.isEmpty() & resultForUser.isEmpty()) {
+            System.out.println("What number is missing in the progression?");
+            answerUser = createArray();
+            return answerUser;
+        } else  {
+            if (answerUser.equals(result)) {
+                answerUser = createArray();
+                return answerUser;
+            } else {
+                System.out.println(answerUser + " is wrong answer ;(. Correct answer was "
+                        + result + ".");
+                answerUser = "Wrong";
+            }
+        }
+        return answerUser;
+    }
+
     public static String createArray() {
         int firstNumber = ThreadLocalRandom.current().nextInt(10);
         int numberToAdd = ThreadLocalRandom.current().nextInt(10);
@@ -21,7 +41,8 @@ public class GameFour {
         return answerForUser;
     }
 
-        public static String lookingForMissingNumber (String[] arrayFromUser){
+        public static String lookingForMissingNumber (String resultForUser){
+        String[] arrayFromUser = resultForUser.split(" ");
             int numberMissingElement = Arrays.asList(arrayFromUser).indexOf("..");
             arrayFromUser[numberMissingElement] = "0";
             int[] arrayFromUserInt = new int [10];
