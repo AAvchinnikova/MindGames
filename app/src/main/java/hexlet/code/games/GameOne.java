@@ -11,10 +11,8 @@ public class GameOne {
             return answer;
         } else {
             if (Integer.parseInt(resultForUser) % 2 == 0 & answer.equals("yes")) {
-                System.out.println("Correct!");
                 answer = Integer.toString(number);
             } else if (Integer.parseInt(resultForUser) % 2 != 0 & answer.equals("no")) {
-                System.out.println("Correct!");
                 answer = Integer.toString(number);
             } else {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");

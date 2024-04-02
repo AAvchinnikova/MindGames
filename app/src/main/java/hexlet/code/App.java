@@ -8,7 +8,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         String numberGame = scanner.next();
         System.out.println("Your choice: " + numberGame);
-        System.out.println("Welcome to the Brain Games!");
+        System.out.println("\nWelcome to the Brain Games!");
         System.out.println("May I have your name?");
         String userName = scanner.next();
         System.out.println("Hello, " + userName);

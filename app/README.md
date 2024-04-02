@@ -44,6 +44,9 @@ make update
 ## Demo game 1 (parity check)
 https://asciinema.org/a/nXkH5reXTkEFt2K6puOTaiajv
 
+## Demo game 2 (calculator)
+https://asciinema.org/a/eI6a9ZDq5CDj6la9atzs7vaIh
+
 ## asdf
 
 On *nix and macOS to manage Java versions we recommend using asdf https://github.com/asdf-vm/asdf.

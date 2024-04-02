@@ -13,11 +13,11 @@ public class GameTwo {
         //String calculateNumber = calculation(resultForUser);
 
         if (answer.isEmpty() & resultForUser.isEmpty()) {
+            System.out.println("What is the result of the expression?");
             answer = numberOne + " " + sing + " " + numberTwo;
             return answer;
         } else {
             if (answer.equals(calculation(resultForUser))) {
-                System.out.println("Correct!");
                 answer = numberOne + " " + sing + " " + numberTwo;
                 return answer;
             } else {
