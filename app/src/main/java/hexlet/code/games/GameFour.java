@@ -23,6 +23,26 @@ public class GameFour {
 
         public static String lookingForMissingNumber (String[] arrayFromUser){
             int numberMissingElement = Arrays.asList(arrayFromUser).indexOf("..");
+            arrayFromUser[numberMissingElement] = "0";
+            int[] arrayFromUserInt = new int [10];
+            var difference = 0;
+            var result = 0;
+            for (var i = 0; i < 10; i++) {
+                arrayFromUserInt[i] = Integer.parseInt(arrayFromUser[i]);
+            }
+            if (numberMissingElement == 0) {
+                difference = arrayFromUserInt[2] - arrayFromUserInt [1];
+                result = difference;
+            } else {
+                for (var i = 0; i < 10; i++) {
+                    if (arrayFromUserInt[i+1] > arrayFromUserInt[i]) {
+                        difference = arrayFromUserInt[i+1] - arrayFromUserInt[i];
+                        result = arrayFromUserInt[numberMissingElement-1] + difference;
+                        break;
+                    }
+                }
+            }
+            return Integer.toString(result);
         }
 
 }
