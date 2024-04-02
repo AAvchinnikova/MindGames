@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.games.GameFour;
 import hexlet.code.games.GameOne;
 import hexlet.code.games.GameThree;
 import hexlet.code.games.GameTwo;
@@ -21,6 +22,9 @@ public class Engine {
                     break;
                 case 4:
                     resultForUser = GameThree.gameThree(answerUser, resultForUser);
+                    break;
+                case 5:
+                    resultForUser = GameFour.gameFour(answerUser, resultForUser);
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + Integer.parseInt(numberGame));
