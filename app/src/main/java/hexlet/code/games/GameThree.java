@@ -24,7 +24,7 @@ public class GameThree {
         }
         return answer;
     }
-    public static String calculation(String resultForUser) {
+    private static String calculation(String resultForUser) {
         var mathExample = resultForUser.split(" ");
         var firstNumber = mathExample[0];
         var secondNumber = mathExample[1];
