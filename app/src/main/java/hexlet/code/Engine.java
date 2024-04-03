@@ -11,7 +11,11 @@ public class Engine {
         String answerUser = "";
         for (var i = 0; i <= 3; i++) {
             switch (Integer.parseInt(numberGame)) {
+                case 0:
                 case 1:
+                    scanner.close();
+                    return;
+                case 2:
                     resultForUser = GameOne.gameOne(answerUser, resultForUser);
                     break;
                 case 3:
