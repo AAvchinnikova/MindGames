@@ -14,7 +14,12 @@ public class App {
         System.out.println("0 - Exit");
         Scanner scanner = new Scanner(System.in);
         String numberGame = scanner.next();
-        Engine.engine(numberGame);
+        System.out.println("Your choice: " + numberGame);
+        System.out.println("\nWelcome to the Brain Games!");
+        System.out.println("May I have your name?");
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName);
+        Engine.engine(userName, numberGame);
         scanner.close();
     }
 }

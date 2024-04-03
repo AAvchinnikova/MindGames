@@ -9,17 +9,15 @@ import hexlet.code.games.GameCalc;
 import java.util.Scanner;
 
 public class Engine {
-    public static void engine(String numberGame) {
+    public static void engine(String userName, String numberGame) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Your choice: " + numberGame);
-        System.out.println("\nWelcome to the Brain Games!");
-        System.out.println("May I have your name?");
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName);
         String resultForUser = "";
         String answerUser = "";
         for (var i = 0; i <= 3; i++) {
             switch (Integer.parseInt(numberGame)) {
+                case 0:
+                case 1:
+                    return;
                 case 2:
                     resultForUser = GameEven.gameOne(answerUser, resultForUser);
                     break;
@@ -35,8 +33,6 @@ public class Engine {
                 case 6:
                     resultForUser = GamePrime.gameFive(answerUser, resultForUser);
                     break;
-                case 0:
-                case 1:
                 default:
                     return;
             }
