@@ -57,7 +57,7 @@ public class Engine {
                         throw new IllegalStateException("Unexpected value: " + i);
                 }
             }  else {
-                System.out.println("Let's try again, " + userName);
+                System.out.println("Let's try again, " + userName + "!");
                 return;
             }
         } System.out.println("Congratulations, " + userName + "!");
