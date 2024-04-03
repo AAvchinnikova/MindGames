@@ -6,7 +6,7 @@ public class GameEven {
     public static String gameOne(String answer, String resultForUser) {
         var number = ThreadLocalRandom.current().nextInt(1000);
         if (answer.isEmpty() & resultForUser.isEmpty()) {
-            System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'");
+            System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
             answer = Integer.toString(number);
             return answer;
         } else {
