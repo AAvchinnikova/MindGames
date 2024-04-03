@@ -56,21 +56,21 @@ public class GameProgression {
         int result = 0;
         int numberMissingElement = 0;
         var difference = 0;
-        for (var i = 0; i < arrayFromUser.length; i++) {
+        for (var i = 0; i < arrayFromUser.length; i++) { //calculate index missing Element
             if (arrayFromUser[i].equals("..")) {
                 numberMissingElement = i;
             }
         }
         arrayFromUser[numberMissingElement] = "0";
-        for (var i = 0; i < arrayFromUser.length; i++) {
+        for (var i = 0; i < arrayFromUser.length; i++) { //make int array
             arrayFromUserInt[i] = Integer.parseInt(arrayFromUser[i]);
         }
-        if (numberMissingElement == 0) {
+        if (numberMissingElement == 0) { //for case, when missing element is the first
             difference = arrayFromUserInt[2] - arrayFromUserInt[1];
             result = arrayFromUserInt[1] - difference;
         } else {
             for (var i = 0; i < arrayFromUser.length; i++) {
-                if (arrayFromUserInt[i + 1] > arrayFromUserInt[i]) {
+                if (arrayFromUserInt[i + 1] != 0 & arrayFromUserInt[i] !=0) {
                     difference = arrayFromUserInt[i + 1] - arrayFromUserInt[i];
                     result = arrayFromUserInt[numberMissingElement - 1] + difference;
                     break;
