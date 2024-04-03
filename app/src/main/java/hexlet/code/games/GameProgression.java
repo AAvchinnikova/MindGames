@@ -62,7 +62,7 @@ public class GameProgression {
         }
         if (numberMissingElement == 0) {
             difference = arrayFromUserInt[2] - arrayFromUserInt[1];
-            result = difference;
+            result = arrayFromUserInt[1] - difference;
         } else {
             for (var i = 0; i < arrayFromUser.length; i++) {
                 if (arrayFromUserInt[i + 1] > arrayFromUserInt[i]) {

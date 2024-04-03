@@ -35,7 +35,7 @@ public class Engine {
                     resultForUser = GamePrime.gameFive(answerUser, resultForUser);
                     break;
                 default:
-                    throw new IllegalStateException("Unexpected value: " + Integer.parseInt(numberGame));
+                    return;
             }
             if (!resultForUser.equals("Wrong")) {
                 switch (i) {
