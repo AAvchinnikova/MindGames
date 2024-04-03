@@ -15,24 +15,23 @@ public class Engine {
         String answerUser = "";
         int numberOfAttemps = 3;
         for (var i = 0; i <= numberOfAttemps; i++) {
-            switch (Integer.parseInt(numberGame)) {
-                case 2:
+            switch (numberGame) {
+                case "2":
                     resultForUser = GameEven.gameOne(answerUser, resultForUser);
                     break;
-                case 3:
+                case "3":
                     resultForUser = GameCalc.gameTwo(answerUser, resultForUser);
                     break;
-                case 4:
+                case "4":
                     resultForUser = GameGCD.gameThree(answerUser, resultForUser);
                     break;
-                case 5:
+                case "5":
                     resultForUser = GameProgression.gameFour(answerUser, resultForUser);
                     break;
-                case 6:
+                case "6":
                     resultForUser = GamePrime.gameFive(answerUser, resultForUser);
                     break;
-                case 0:
-                case 1:
+                case "1":
                 default:
                     return;
             }
