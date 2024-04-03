@@ -5,7 +5,7 @@ import java.util.Random;
 public class GameGCD {
     public static String gameThree(String answer, String resultForUser) {
         Random random = new Random();
-        var numberSize = 100;
+        final int numberSize = 100;
 
         int numberOne = random.nextInt(numberSize);
         int numberTwo = random.nextInt(numberSize);

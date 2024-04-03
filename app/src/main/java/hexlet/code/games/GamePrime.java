@@ -6,7 +6,7 @@ public class GamePrime {
 
     public static String gameFive(String answerUser, String resultForUser) {
         Random random = new Random();
-        var numberSize = 100;
+        final int numberSize = 100;
 
         var numberForUser = random.nextInt(numberSize);
 

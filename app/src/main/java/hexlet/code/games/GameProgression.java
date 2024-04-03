@@ -24,7 +24,7 @@ public class GameProgression {
     }
     private static String createArray() {
         Random random = new Random();
-        var numberSize = 10;
+        final int numberSize = 10;
 
         int firstNumber = random.nextInt(numberSize);
         int numberToAdd = random.nextInt(numberSize) + 1;
@@ -50,7 +50,7 @@ public class GameProgression {
     }
     private static String lookingForMissingNumber(String resultForUser) {
         String[] arrayFromUser = resultForUser.split(" ");
-        var numberSize = 10;
+        final int numberSize = 10;
 
         int[] arrayFromUserInt = new int[numberSize];
         int result = 0;
@@ -70,7 +70,7 @@ public class GameProgression {
             result = arrayFromUserInt[1] - difference;
         } else {
             for (var i = 0; i < arrayFromUser.length; i++) {
-                if (arrayFromUserInt[i + 1] != 0 & arrayFromUserInt[i] !=0) {
+                if (arrayFromUserInt[i + 1] != 0 & arrayFromUserInt[i] != 0) {
                     difference = arrayFromUserInt[i + 1] - arrayFromUserInt[i];
                     result = arrayFromUserInt[numberMissingElement - 1] + difference;
                     break;
