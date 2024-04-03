@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class GamePrime {
 
     public static String gameFive(String answerUser, String resultForUser) {
-        var numberForUser = ThreadLocalRandom.current().nextInt(100);
+        var numberForUser = ThreadLocalRandom.current().nextInt();
 
         if (answerUser.isEmpty() & resultForUser.isEmpty()) {
             System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");

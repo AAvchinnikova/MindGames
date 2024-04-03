@@ -13,11 +13,9 @@ public class Engine {
         Scanner scanner = new Scanner(System.in);
         String resultForUser = "";
         String answerUser = "";
-        for (var i = 0; i <= 3; i++) {
+        int numberOfAttemps = 3;
+        for (var i = 0; i <= numberOfAttemps; i++) {
             switch (Integer.parseInt(numberGame)) {
-                case 0:
-                case 1:
-                    return;
                 case 2:
                     resultForUser = GameEven.gameOne(answerUser, resultForUser);
                     break;
@@ -33,6 +31,8 @@ public class Engine {
                 case 6:
                     resultForUser = GamePrime.gameFive(answerUser, resultForUser);
                     break;
+                case 0:
+                case 1:
                 default:
                     return;
             }
