@@ -1,10 +1,11 @@
 package hexlet.code.games;
 
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 public class GameEven {
     public static String gameOne(String answer, String resultForUser) {
-        var number = ThreadLocalRandom.current().nextInt();
+        Random random = new Random();
+        int number = random.nextInt();
         if (answer.isEmpty() & resultForUser.isEmpty()) {
             System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
             answer = Integer.toString(number);

@@ -1,11 +1,13 @@
 package hexlet.code.games;
 
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 public class GamePrime {
 
     public static String gameFive(String answerUser, String resultForUser) {
-        var numberForUser = ThreadLocalRandom.current().nextInt();
+        Random random = new Random();
+        int numberSize = 100;
+        var numberForUser = random.nextInt(numberSize);
 
         if (answerUser.isEmpty() & resultForUser.isEmpty()) {
             System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");

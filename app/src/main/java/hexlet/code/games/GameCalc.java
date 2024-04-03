@@ -1,13 +1,16 @@
 package hexlet.code.games;
 
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 public class GameCalc {
 
     public static String gameTwo(String answer, String resultForUser) {
-        int numberOne = ThreadLocalRandom.current().nextInt();
-        int numberTwo = ThreadLocalRandom.current().nextInt();
-        int numberToSelect = ThreadLocalRandom.current().nextInt(2);
+        Random random = new Random();
+        int numberSize = 100;
+        int numberChar = 2;
+        int numberOne = random.nextInt(numberSize);
+        int numberTwo = random.nextInt(numberSize);
+        int numberToSelect = random.nextInt(numberChar);
         String[] calculationSigns = {"+", "-", "*"};
         String sing = calculationSigns[numberToSelect];
         //String calculateNumber = calculation(resultForUser);

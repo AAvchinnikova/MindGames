@@ -1,11 +1,13 @@
 package hexlet.code.games;
 
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 public class GameGCD {
     public static String gameThree(String answer, String resultForUser) {
-        int numberOne = ThreadLocalRandom.current().nextInt();
-        int numberTwo = ThreadLocalRandom.current().nextInt();
+        Random random = new Random();
+        int numberSize = 100;
+        int numberOne = random.nextInt(numberSize);
+        int numberTwo = random.nextInt(numberSize);
 
         if (answer.isEmpty() & resultForUser.isEmpty()) {
             System.out.println("Find the greatest common divisor of given numbers.");
