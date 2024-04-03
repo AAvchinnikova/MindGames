@@ -24,7 +24,8 @@ public class GameProgression {
     }
     private static String createArray() {
         Random random = new Random();
-        int numberSize = 9;
+        var numberSize = 10;
+
         int firstNumber = random.nextInt(numberSize);
         int numberToAdd = random.nextInt(numberSize);
         int positionForMission = random.nextInt(numberSize);
