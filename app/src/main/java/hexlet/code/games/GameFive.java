@@ -26,13 +26,12 @@ public class GameFive {
 
     private static boolean checkNumber(String resultForUser) {
         int numberForCheck = Integer.parseInt(resultForUser);
-
-        if (numberForCheck != 1) {
-            for (var i = 2; i <= numberForCheck; i++) {
-                int result = numberForCheck % i;
-                if (result == 0) {
-                    return false;
-                }
+        if (numberForCheck < 2) {
+            return false;
+        }
+        for (var i = 2; i <= numberForCheck / 2; i++) {
+            if (numberForCheck % i == 0) {
+                return false;
             }
         }
         return true;
