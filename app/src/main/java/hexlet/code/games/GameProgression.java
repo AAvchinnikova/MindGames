@@ -24,7 +24,7 @@ public class GameProgression {
     }
     private static String createArray() {
         int firstNumber = ThreadLocalRandom.current().nextInt(10);
-        int numberToAdd = ThreadLocalRandom.current().nextInt(10);
+        int numberToAdd = ThreadLocalRandom.current().nextInt(10) + 1;
         int positionForMission = ThreadLocalRandom.current().nextInt(10);
         int[] arrayForUser = new int[10];
         arrayForUser[0] = firstNumber;

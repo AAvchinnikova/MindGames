@@ -20,5 +20,6 @@ public class App {
         String userName = scanner.next();
         System.out.println("Hello, " + userName);
         Engine.engine(userName, numberGame);
+        scanner.close();
     }
 }

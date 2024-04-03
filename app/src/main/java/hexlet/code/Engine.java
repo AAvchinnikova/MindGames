@@ -17,7 +17,6 @@ public class Engine {
             switch (Integer.parseInt(numberGame)) {
                 case 0:
                 case 1:
-                    scanner.close();
                     return;
                 case 2:
                     resultForUser = GameEven.gameOne(answerUser, resultForUser);
