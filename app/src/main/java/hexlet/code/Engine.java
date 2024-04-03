@@ -45,7 +45,7 @@ public class Engine {
                     System.out.println("Correct!");
                     System.out.println("Question: " + resultForUser);
                     answerUser = scanner.next();
-                } else if (i == 3) {
+                } else {
                     System.out.println("Your answer: " + answerUser);
                     System.out.println("Correct!");
                 }
