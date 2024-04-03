@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class GameTwo {
+public class GameCalc {
 
     public static String gameTwo(String answer, String resultForUser) {
         int numberOne = ThreadLocalRandom.current().nextInt(100);
@@ -21,7 +21,7 @@ public class GameTwo {
                 answer = numberOne + " " + sing + " " + numberTwo;
                 return answer;
             } else {
-                var calculateNumber = GameTwo.calculation(resultForUser);
+                var calculateNumber = GameCalc.calculation(resultForUser);
                 System.out.println(answer + " is wrong answer ;(. Correct answer was "
                         + calculateNumber + ".");
                 answer = "Wrong";
@@ -34,7 +34,7 @@ public class GameTwo {
         var firstNumber = mathExample[0];
         var secondNumber = mathExample[2];
         String singForCallculate = mathExample[1];
-        int result = 0;
+        int result;
         switch (singForCallculate) {
             case "+":
                 result = Integer.parseInt(firstNumber) + Integer.parseInt(secondNumber);

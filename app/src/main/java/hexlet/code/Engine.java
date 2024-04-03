@@ -1,10 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.GameFive;
-import hexlet.code.games.GameFour;
-import hexlet.code.games.GameOne;
-import hexlet.code.games.GameThree;
-import hexlet.code.games.GameTwo;
+import hexlet.code.games.GamePrime;
+import hexlet.code.games.GameProgression;
+import hexlet.code.games.GameEven;
+import hexlet.code.games.GameGCD;
+import hexlet.code.games.GameCalc;
 
 import java.util.Scanner;
 
@@ -20,19 +20,19 @@ public class Engine {
                     scanner.close();
                     return;
                 case 2:
-                    resultForUser = GameOne.gameOne(answerUser, resultForUser);
+                    resultForUser = GameEven.gameOne(answerUser, resultForUser);
                     break;
                 case 3:
-                    resultForUser = GameTwo.gameTwo(answerUser, resultForUser);
+                    resultForUser = GameCalc.gameTwo(answerUser, resultForUser);
                     break;
                 case 4:
-                    resultForUser = GameThree.gameThree(answerUser, resultForUser);
+                    resultForUser = GameGCD.gameThree(answerUser, resultForUser);
                     break;
                 case 5:
-                    resultForUser = GameFour.gameFour(answerUser, resultForUser);
+                    resultForUser = GameProgression.gameFour(answerUser, resultForUser);
                     break;
                 case 6:
-                    resultForUser = GameFive.gameFive(answerUser, resultForUser);
+                    resultForUser = GamePrime.gameFive(answerUser, resultForUser);
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + Integer.parseInt(numberGame));

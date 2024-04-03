@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class GameFive {
+public class GamePrime {
 
     public static String gameFive(String answerUser, String resultForUser) {
         var numberForUser = ThreadLocalRandom.current().nextInt(100);

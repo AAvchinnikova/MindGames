@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class GameFour {
+public class GameProgression {
 
     public static String gameFour(String answerUser, String resultForUser) {
         String result = lookingForMissingNumber(resultForUser);
