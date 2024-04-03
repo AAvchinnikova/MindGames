@@ -27,7 +27,7 @@ public class GameProgression {
         var numberSize = 10;
 
         int firstNumber = random.nextInt(numberSize);
-        int numberToAdd = random.nextInt(numberSize);
+        int numberToAdd = random.nextInt(numberSize) + 1;
         int positionForMission = random.nextInt(numberSize);
         int[] arrayForUser = new int[numberSize];
         arrayForUser[0] = firstNumber;
