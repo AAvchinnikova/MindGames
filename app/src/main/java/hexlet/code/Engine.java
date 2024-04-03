@@ -37,24 +37,17 @@ public class Engine {
                     return;
             }
             if (!resultForUser.equals("Wrong")) {
-                switch (i) {
-                    case 0:
-                        System.out.println("Question: " + resultForUser);
-                        answerUser = scanner.next();
-                        break;
-                    case 1:
-                    case 2:
-                        System.out.println("Your answer: " + answerUser);
-                        System.out.println("Correct!");
-                        System.out.println("Question: " + resultForUser);
-                        answerUser = scanner.next();
-                        break;
-                    case 3:
-                        System.out.println("Your answer: " + answerUser);
-                        System.out.println("Correct!");
-                        break;
-                    default:
-                        throw new IllegalStateException("Unexpected value: " + i);
+                if (i == 0) {
+                    System.out.println("Question: " + resultForUser);
+                    answerUser = scanner.next();
+                } else if (i == 1 || i == 2) {
+                    System.out.println("Your answer: " + answerUser);
+                    System.out.println("Correct!");
+                    System.out.println("Question: " + resultForUser);
+                    answerUser = scanner.next();
+                } else if (i == 3) {
+                    System.out.println("Your answer: " + answerUser);
+                    System.out.println("Correct!");
                 }
             }  else {
                 System.out.println("Let's try again, " + userName + "!");
