@@ -7,6 +7,7 @@ public class GameCalc {
     public static String gameTwo(String answer, String resultForUser) {
         Random random = new Random();
         var numberSize = 100;
+
         var numberChar = 2;
 
         int numberOne = random.nextInt(numberSize);

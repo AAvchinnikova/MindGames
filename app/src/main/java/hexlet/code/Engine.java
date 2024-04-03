@@ -13,7 +13,8 @@ public class Engine {
         Scanner scanner = new Scanner(System.in);
         String resultForUser = "";
         String answerUser = "";
-        var numberOfAttemps = 3;
+        int numberOfAttemps;
+        numberOfAttemps = 3;
 
         for (var i = 0; i <= numberOfAttemps; i++) {
             switch (numberGame) {
