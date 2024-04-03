@@ -6,12 +6,11 @@ public class GameCalc {
 
     public static String gameTwo(String answer, String resultForUser) {
         Random random = new Random();
-        var numberSize = 100;
+        final int numberMax = 100;
+        final int numberChar = 2;
 
-        var numberChar = 2;
-
-        int numberOne = random.nextInt(numberSize);
-        int numberTwo = random.nextInt(numberSize);
+        int numberOne = random.nextInt(numberMax);
+        int numberTwo = random.nextInt(numberMax);
         int numberToSelect = random.nextInt(numberChar);
         String[] calculationSigns = {"+", "-", "*"};
         String sing = calculationSigns[numberToSelect];
