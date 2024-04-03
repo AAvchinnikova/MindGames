@@ -4,8 +4,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class GameThree {
     public static String gameThree(String answer, String resultForUser) {
-        int numberOne = ThreadLocalRandom.current().nextInt(10);
-        int numberTwo = ThreadLocalRandom.current().nextInt(10);
+        int numberOne = ThreadLocalRandom.current().nextInt(100);
+        int numberTwo = ThreadLocalRandom.current().nextInt(100);
 
         if (answer.isEmpty() & resultForUser.isEmpty()) {
             System.out.println("Find the greatest common divisor of given numbers.");

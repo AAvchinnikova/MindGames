@@ -5,8 +5,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public class GameTwo {
 
     public static String gameTwo(String answer, String resultForUser) {
-        int numberOne = ThreadLocalRandom.current().nextInt(10);
-        int numberTwo = ThreadLocalRandom.current().nextInt(10);
+        int numberOne = ThreadLocalRandom.current().nextInt(100);
+        int numberTwo = ThreadLocalRandom.current().nextInt(100);
         int numberToSelect = ThreadLocalRandom.current().nextInt(2);
         String[] calculationSigns = {"+", "-", "*"};
         String sing = calculationSigns[numberToSelect];

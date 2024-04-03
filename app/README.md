@@ -42,19 +42,19 @@ make lint
 make update
 ```
 ## Demo game 1 (Even)
-https://asciinema.org/a/nXkH5reXTkEFt2K6puOTaiajv
+https://asciinema.org/a/86XWGF8QnV6ljcBi5Rr1vnd79
 
 ## Demo game 2 (Calc)
-https://asciinema.org/a/eI6a9ZDq5CDj6la9atzs7vaIh
+https://asciinema.org/a/RqE9BLsSyU8xjrLJDiyuWuhR3
 
 ## Demo game 3 (GCD)
-https://asciinema.org/a/nW9cHyq5Lg9Ip1IhYXSv8zWqg
+https://asciinema.org/a/fhW6TXdY88HsXBKqvg3rZtJ0r
 
 ## Demo game 4 (Progression)
-https://asciinema.org/a/cSoq5CNUQmVb2KFRXzYAh57Ms
+https://asciinema.org/a/6msw2x9w8f2WZvOnPH3nws0CU
 
 ## Demo game 5 (Prime)
-https://asciinema.org/a/rNpSa7SqxOqJ1JnIQmDjatCdH
+https://asciinema.org/a/BxEF60dMDIBRaiXwDvURUyQI8
 
 ## asdf
 
