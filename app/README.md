@@ -41,10 +41,10 @@ make lint
 ```bash
 make update
 ```
-## Demo game 1 (parity check)
+## Demo game 1 (Even)
 https://asciinema.org/a/nXkH5reXTkEFt2K6puOTaiajv
 
-## Demo game 2 (calculator)
+## Demo game 2 (Calc)
 https://asciinema.org/a/eI6a9ZDq5CDj6la9atzs7vaIh
 
 ## Demo game 3 (GCD)
@@ -52,6 +52,9 @@ https://asciinema.org/a/nW9cHyq5Lg9Ip1IhYXSv8zWqg
 
 ## Demo game 4 (Progression)
 https://asciinema.org/a/cSoq5CNUQmVb2KFRXzYAh57Ms
+
+## Demo game 5 (Prime)
+https://asciinema.org/a/rNpSa7SqxOqJ1JnIQmDjatCdH
 
 ## asdf
 
