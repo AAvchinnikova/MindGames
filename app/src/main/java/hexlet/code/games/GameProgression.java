@@ -50,7 +50,8 @@ public class GameProgression {
     }
     private static String lookingForMissingNumber(String resultForUser) {
         String[] arrayFromUser = resultForUser.split(" ");
-        int numberSize = 9;
+        var numberSize = 10;
+
         int[] arrayFromUserInt = new int[numberSize];
         int result = 0;
         int numberMissingElement = 0;
