@@ -4,9 +4,8 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class GameCalc {
-    private static final int numberMax = 10;
+    private static final int numberMax = 100;
     private static final int numberChar = 2;
-
     public static void gameTwo() {
         Engine.meetWithUser("What is the result of the expression?");
         String questionForUser = prepareQuestion();
