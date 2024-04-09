@@ -15,6 +15,7 @@ public class GameEven {
         for (var i = 1; i < 3; i++) {
             var resultcheck = checkNumbers(number, answerUser);
             if (resultcheck) {
+                System.out.println("Correct!");
                 number = random.nextInt(maxNumber);
                 answerForUser = Integer.toString(number);
                 answerUser = Engine.playWithUser(answerForUser);

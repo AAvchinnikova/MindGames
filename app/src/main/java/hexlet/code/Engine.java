@@ -18,18 +18,18 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
         System.out.println(answerForUser);
     }
-
     public static String playWithUser(String answerForUser) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Question: " + answerForUser);
         String answerUser = scanner.next();
+        System.out.println("Your answer: " + answerUser);
         return answerUser;
     }
-
     public static void finishGame(String answerForUser) {
         if (answerForUser.equals("Wrong")) {
             System.out.println("Let's try again, " + userName + "!");
         } else {
+            System.out.println("Correct!");
             System.out.println("Congratulations, " + userName + "!");
         }
     }
