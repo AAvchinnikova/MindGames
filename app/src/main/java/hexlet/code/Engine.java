@@ -26,7 +26,6 @@ public class Engine {
         if (questionForUser.equals("Wrong")) {
             System.out.println("Let's try again, " + userName + "!");
         } else {
-            System.out.println("Correct!");
             System.out.println("Congratulations, " + userName + "!");
         }
     }

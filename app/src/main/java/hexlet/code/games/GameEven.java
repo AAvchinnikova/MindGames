@@ -12,14 +12,18 @@ public class GameEven {
         int number = random.nextInt(NUMBERMAX);
         String questionForUser = Integer.toString(number);
         String answerUser = Engine.playWithUser(questionForUser);
-        for (var i = 1; i < 3; i++) {
+        for (var i = 1; i <= 3; i++) {
             var resultcheck = checkNumbers(number, answerUser);
-            if (resultcheck) {
+            if (resultcheck && i < 3) {
                 System.out.println("Correct!");
                 number = random.nextInt(NUMBERMAX);
                 questionForUser = Integer.toString(number);
                 answerUser = Engine.playWithUser(questionForUser);
-            } else {
+            } else if (resultcheck) {
+                System.out.println("Correct!");
+                answerUser = "";
+            }
+            else {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
                 Engine.finishGame("Wrong");
                 return;

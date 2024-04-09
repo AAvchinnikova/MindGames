@@ -12,13 +12,18 @@ public class GamePrime {
         int number = random.nextInt(NUMBERMAX);
         String questionForUser = Integer.toString(number);
         String answerUser = Engine.playWithUser(questionForUser);
-        for (var i = 1; i < 3; i++) {
-            var resultcheck = calculate(number);
-            if (resultcheck && answerUser.equals("yes") || !resultcheck && answerUser.equals("no")) {
+        for (var i = 1; i <= 3; i++) {
+            var resultPrime = calculate(number);
+            var resultcheck = checkPrime(resultPrime, answerUser);
+            if (resultcheck && i < 3) {
                 System.out.println("Correct!");
                 number = random.nextInt(NUMBERMAX);
                 questionForUser = Integer.toString(number);
                 answerUser = Engine.playWithUser(questionForUser);
+            } else if (resultcheck) {
+                System.out.println("Correct!");
+                answerUser = "";
+
             } else {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
                 Engine.finishGame("Wrong");
@@ -36,5 +41,11 @@ public class GamePrime {
             }
         }
         return true;
+    }
+    private static boolean checkPrime(boolean resultPrime, String answerUser) {
+        if (resultPrime && answerUser.equals("yes") || !resultPrime && answerUser.equals("no")) {
+            return true;
+        }
+        return false;
     }
 }

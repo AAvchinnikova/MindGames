@@ -11,12 +11,15 @@ public class GameProgression {
         Engine.meetWithUser("What number is missing in the progression?");
         String questionForUser = prepareQuestion();
         String answerUser = Engine.playWithUser(questionForUser);
-        for (var i = 1; i < 3; i++) {
+        for (var i = 1; i <= 3; i++) {
             var calculateNumber = calculation(questionForUser);
-            if (answerUser.equals(calculateNumber)) {
+            if (answerUser.equals(calculateNumber) && i < 3) {
                 System.out.println("Correct!");
                 questionForUser = prepareQuestion();
                 answerUser = Engine.playWithUser(questionForUser);
+            } else if (answerUser.equals(calculateNumber)) {
+                System.out.println("Correct!");
+                answerUser = "";
             } else {
                 System.out.println(answerUser + " is wrong answer ;(. Correct answer was "
                         + calculateNumber + ".");
