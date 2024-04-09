@@ -22,8 +22,7 @@ public class GameEven {
             } else if (resultcheck) {
                 System.out.println("Correct!");
                 answerUser = "";
-            }
-            else {
+            } else {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
                 Engine.finishGame("Wrong");
                 return;
