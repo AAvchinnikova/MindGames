@@ -35,6 +35,7 @@ public class App {
                     GamePrime.gameFive();
                     break;
                 case "1":
+                    new Engine();
                 default:
                     break;
             }
