@@ -24,7 +24,7 @@ public class App {
                     GameEven.gameOne();
                     break;
                 case "3":
-                    new GameCalc();
+                    GameCalc.gameTwo();
                     break;
                 case "4":
                     new GameGCD();

@@ -1,40 +1,42 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
 import java.util.Random;
 
 public class GameCalc {
+    private static final int numberMax = 100;
+    private static final int numberChar = 2;
 
-    public static String gameTwo(String answer, String resultForUser) {
+    public static void gameTwo() {
+        Engine.meetWithUser("What is the result of the expression?");
+        String questionForUser = prepareQuestion();
+        String answerUser = Engine.playWithUser(questionForUser);
+        for (var i = 1; i < 3; i++) {
+            var calculateNumber = calculation(questionForUser);
+            if (answerUser.equals(calculateNumber)) {
+                System.out.println("Correct!");
+                questionForUser = prepareQuestion();
+                answerUser = Engine.playWithUser(questionForUser);
+            } else {
+                System.out.println(answerUser + " is wrong answer ;(. Correct answer was "
+                        + calculateNumber + ".");
+                Engine.finishGame("Wrong");
+                return;
+            }
+        }
+        Engine.finishGame("");
+    }
+    public static String prepareQuestion() {
         Random random = new Random();
-        final int numberMax = 100;
-        final int numberChar = 2;
-
         int numberOne = random.nextInt(numberMax);
         int numberTwo = random.nextInt(numberMax);
         int numberToSelect = random.nextInt(numberChar);
         String[] calculationSigns = {"+", "-", "*"};
         String sing = calculationSigns[numberToSelect];
-        //String calculateNumber = calculation(resultForUser);
-
-        if (answer.isEmpty() & resultForUser.isEmpty()) {
-            System.out.println("What is the result of the expression?");
-            answer = numberOne + " " + sing + " " + numberTwo;
-            return answer;
-        } else {
-            if (answer.equals(calculation(resultForUser))) {
-                answer = numberOne + " " + sing + " " + numberTwo;
-                return answer;
-            } else {
-                var calculateNumber = GameCalc.calculation(resultForUser);
-                System.out.println(answer + " is wrong answer ;(. Correct answer was"
-                        + calculateNumber + ".");
-                answer = "Wrong";
-            }
-        }
-        return answer;
+        return numberOne + " " + sing + " " + numberTwo;
     }
-    public static String calculation(String resultForUser) {
-        var mathExample = resultForUser.split(" ");
+    public static String calculation(String questionForUser) {
+        var mathExample = questionForUser.split(" ");
         var firstNumber = mathExample[0];
         var secondNumber = mathExample[2];
         String singForCallculate = mathExample[1];
