@@ -9,51 +9,28 @@ import hexlet.code.games.GameCalc;
 import java.util.Scanner;
 
 public class Engine {
-    public static void engine(String userName, String numberGame) {
+    static String userName;
+    public static void meetWithUser (String answerForUser) {
         Scanner scanner = new Scanner(System.in);
-        String resultForUser = "";
-        String answerUser = "";
-        final int numberOfAttemps = 3;
+        System.out.println("\nWelcome to the Brain Games!");
+        System.out.println("May I have your name?");
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
+        System.out.println(answerForUser);
+    }
 
-        for (var i = 0; i <= numberOfAttemps; i++) {
-            switch (numberGame) {
-                case "2":
-                    resultForUser = GameEven.gameOne(answerUser, resultForUser);
-                    break;
-                case "3":
-                    resultForUser = GameCalc.gameTwo(answerUser, resultForUser);
-                    break;
-                case "4":
-                    resultForUser = GameGCD.gameThree(answerUser, resultForUser);
-                    break;
-                case "5":
-                    resultForUser = GameProgression.gameFour(answerUser, resultForUser);
-                    break;
-                case "6":
-                    resultForUser = GamePrime.gameFive(answerUser, resultForUser);
-                    break;
-                case "1":
-                default:
-                    return;
-            }
-            if (!resultForUser.equals("Wrong")) {
-                if (i == 0) {
-                    System.out.println("Question: " + resultForUser);
-                    answerUser = scanner.next();
-                } else if (i == 1 || i == 2) {
-                    System.out.println("Your answer: " + answerUser);
-                    System.out.println("Correct!");
-                    System.out.println("Question: " + resultForUser);
-                    answerUser = scanner.next();
-                } else {
-                    System.out.println("Your answer: " + answerUser);
-                    System.out.println("Correct!");
-                }
-            }  else {
-                System.out.println("Let's try again, " + userName + "!");
-                return;
-            }
-        } System.out.println("Congratulations, " + userName + "!");
-        scanner.close();
+    public static String playWithUser(String answerForUser) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Question: " + answerForUser);
+        String answerUser = scanner.next();
+        return answerUser;
+    }
+
+    public static void finishGame(String answerForUser) {
+        if (answerForUser.equals("Wrong")) {
+            System.out.println("Let's try again, " + userName + "!");
+        } else {
+            System.out.println("Congratulations, " + userName + "!");
+        }
     }
 }

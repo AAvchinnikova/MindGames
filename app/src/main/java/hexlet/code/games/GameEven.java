@@ -1,25 +1,38 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 
 public class GameEven {
-    public static String gameOne(String answer, String resultForUser) {
+    private static final int maxNumber = 100;
+    public static void gameOne() {
+        Engine.meetWithUser("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();
-        int number = random.nextInt();
-        if (answer.isEmpty() & resultForUser.isEmpty()) {
-            System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-            answer = Integer.toString(number);
-            return answer;
-        } else {
-            if (Integer.parseInt(resultForUser) % 2 == 0 & answer.equals("yes")) {
-                answer = Integer.toString(number);
-            } else if (Integer.parseInt(resultForUser) % 2 != 0 & answer.equals("no")) {
-                answer = Integer.toString(number);
+        int number = random.nextInt(maxNumber);
+        String answerForUser = Integer.toString(number);
+        String answerUser = Engine.playWithUser(answerForUser);
+        for (var i = 1; i < 3; i++) {
+            var resultcheck = checkNumbers(number, answerUser);
+            if (resultcheck) {
+                number = random.nextInt(maxNumber);
+                answerForUser = Integer.toString(number);
+                answerUser = Engine.playWithUser(answerForUser);
             } else {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                answer = "Wrong";
+                Engine.finishGame("Wrong");
+                return;
             }
+        } Engine.finishGame("");
+    }
+
+    public static boolean checkNumbers(int number, String answerUser) {
+        boolean resultCheck;
+        if (number % 2 == 0 && answerUser.equals("yes") || number % 2 != 0 && answerUser.equals("no")) {
+            resultCheck = true;
+        } else {
+            resultCheck = false;
         }
-        return answer;
+        return resultCheck;
     }
 }

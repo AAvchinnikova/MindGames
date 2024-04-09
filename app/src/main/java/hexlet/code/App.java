@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import hexlet.code.games.*;
+
 import java.util.Scanner;
 
 public class App {
@@ -17,11 +19,26 @@ public class App {
         System.out.println("Your choice: " + numberGame);
 
         if (Integer.parseInt(numberGame) != 0) {
-            System.out.println("\nWelcome to the Brain Games!");
-            System.out.println("May I have your name?");
-            String userName = scanner.next();
-            System.out.println("Hello, " + userName + "!");
-            Engine.engine(userName, numberGame);
+            switch (numberGame) {
+                case "2":
+                    GameEven.gameOne();
+                    break;
+                case "3":
+                    new GameCalc();
+                    break;
+                case "4":
+                    new GameGCD();
+                    break;
+                case "5":
+                    new GameProgression();
+                    break;
+                case "6":
+                    new GamePrime();
+                    break;
+                case "1":
+                default:
+                    break;
+            }
         }
         scanner.close();
     }
