@@ -9,13 +9,16 @@ import hexlet.code.games.GameCalc;
 import java.util.Scanner;
 
 public class Engine {
-    static String userName;
-    public static void meetWithUser (String answerForUser) {
+    public static String userName;
+
+    static {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nWelcome to the Brain Games!");
         System.out.println("May I have your name?");
-        String userName = scanner.next();
+        userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
+    }
+    public static void meetWithUser (String answerForUser) {
         System.out.println(answerForUser);
     }
     public static String playWithUser(String answerForUser) {
