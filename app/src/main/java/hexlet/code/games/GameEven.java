@@ -33,11 +33,7 @@ public class GameEven {
 
     public static boolean checkNumbers(int number, String answerUser) {
         boolean resultCheck;
-        if (number % 2 == 0 && answerUser.equals("yes") || number % 2 != 0 && answerUser.equals("no")) {
-            resultCheck = true;
-        } else {
-            resultCheck = false;
-        }
+        resultCheck = number % 2 == 0 && answerUser.equals("yes") || number % 2 != 0 && answerUser.equals("no");
         return resultCheck;
     }
 }
