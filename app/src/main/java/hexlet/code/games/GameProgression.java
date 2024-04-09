@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class GameProgression {
-    private static final int numberSize = 10;
+    private static final int NUMBERSIZE = 10;
 
     public static void gameFour() {
         Engine.meetWithUser("What number is missing in the progression?");
@@ -28,10 +28,10 @@ public class GameProgression {
     }
     private static String prepareQuestion() {
         Random random = new Random();
-        int firstNumber = random.nextInt(numberSize);
-        int numberToAdd = random.nextInt(numberSize) + 1;
-        int positionForMission = random.nextInt(numberSize);
-        int[] arrayForUser = new int[numberSize];
+        int firstNumber = random.nextInt(NUMBERSIZE);
+        int numberToAdd = random.nextInt(NUMBERSIZE) + 1;
+        int positionForMission = random.nextInt(NUMBERSIZE);
+        int[] arrayForUser = new int[NUMBERSIZE];
         arrayForUser[0] = firstNumber;
         var questionForUser = new StringBuilder();
         for (var i = 1; i < arrayForUser.length; i++) {
@@ -51,7 +51,7 @@ public class GameProgression {
     }
     private static String calculation(String resultForUser) {
         String[] arrayFromUser = resultForUser.split(" ");
-        int[] arrayFromUserInt = new int[numberSize];
+        int[] arrayFromUserInt = new int[NUMBERSIZE];
         int result = 0;
         int numberMissingElement = 0;
         var difference = 0;

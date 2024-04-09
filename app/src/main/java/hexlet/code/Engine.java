@@ -12,7 +12,7 @@ public class Engine {
         userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
     }
-    public static void meetWithUser (String questionForUser) {
+    public static void meetWithUser(String questionForUser) {
         System.out.println(questionForUser);
     }
     public static String playWithUser(String questionForUser) {

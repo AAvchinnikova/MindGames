@@ -5,18 +5,18 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class GameEven {
-    private static final int maxNumber = 100;
+    private static final int NUMBERMAX = 100;
     public static void gameOne() {
         Engine.meetWithUser("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();
-        int number = random.nextInt(maxNumber);
+        int number = random.nextInt(NUMBERMAX);
         String questionForUser = Integer.toString(number);
         String answerUser = Engine.playWithUser(questionForUser);
         for (var i = 1; i < 3; i++) {
             var resultcheck = checkNumbers(number, answerUser);
             if (resultcheck) {
                 System.out.println("Correct!");
-                number = random.nextInt(maxNumber);
+                number = random.nextInt(NUMBERMAX);
                 questionForUser = Integer.toString(number);
                 answerUser = Engine.playWithUser(questionForUser);
             } else {

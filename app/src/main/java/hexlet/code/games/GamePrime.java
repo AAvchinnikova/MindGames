@@ -5,18 +5,18 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class GamePrime {
-    private static final int maxNumber = 10;
+    private static final int NUMBERMAX = 10;
     public static void gameFive() {
         Engine.meetWithUser("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Random random = new Random();
-        int number = random.nextInt(maxNumber);
+        int number = random.nextInt(NUMBERMAX);
         String questionForUser = Integer.toString(number);
         String answerUser = Engine.playWithUser(questionForUser);
         for (var i = 1; i < 3; i++) {
             var resultcheck = calculate(number);
             if (resultcheck && answerUser.equals("yes") || !resultcheck && answerUser.equals("no")) {
                 System.out.println("Correct!");
-                number = random.nextInt(maxNumber);
+                number = random.nextInt(NUMBERMAX);
                 questionForUser = Integer.toString(number);
                 answerUser = Engine.playWithUser(questionForUser);
             } else {
