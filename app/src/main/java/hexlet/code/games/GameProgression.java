@@ -1,57 +1,56 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 
 public class GameProgression {
+    private static final int numberSize = 10;
 
-    public static String gameFour(String answerUser, String resultForUser) {
-        String result = lookingForMissingNumber(resultForUser);
-        if (answerUser.isEmpty() & resultForUser.isEmpty()) {
-            System.out.println("What number is missing in the progression?");
-            answerUser = createArray();
-            return answerUser;
-        } else  {
-            if (answerUser.equals(result)) {
-                answerUser = createArray();
-                return answerUser;
+    public static void gameFour() {
+        Engine.meetWithUser("What number is missing in the progression?");
+        String questionForUser = prepareQuestion();
+        String answerUser = Engine.playWithUser(questionForUser);
+        for (var i = 1; i < 3; i++) {
+            var calculateNumber = calculation(questionForUser);
+            if (answerUser.equals(calculateNumber)) {
+                System.out.println("Correct!");
+                questionForUser = prepareQuestion();
+                answerUser = Engine.playWithUser(questionForUser);
             } else {
                 System.out.println(answerUser + " is wrong answer ;(. Correct answer was "
-                        + result + ".");
-                answerUser = "Wrong";
+                        + calculateNumber + ".");
+                Engine.finishGame("Wrong");
+                return;
             }
         }
-        return answerUser;
+        Engine.finishGame("");
     }
-    private static String createArray() {
+    private static String prepareQuestion() {
         Random random = new Random();
-        final int numberSize = 10;
-
         int firstNumber = random.nextInt(numberSize);
         int numberToAdd = random.nextInt(numberSize) + 1;
         int positionForMission = random.nextInt(numberSize);
         int[] arrayForUser = new int[numberSize];
         arrayForUser[0] = firstNumber;
-        var answerForUser = new StringBuilder();
+        var questionForUser = new StringBuilder();
         for (var i = 1; i < arrayForUser.length; i++) {
             arrayForUser[i] = firstNumber + numberToAdd;
             firstNumber = firstNumber + numberToAdd;
         }
         for (var i = 0; i < arrayForUser.length; i++) {
             if (i != positionForMission) {
-                answerForUser.append(arrayForUser[i]);
-                answerForUser.append(" ");
+                questionForUser.append(arrayForUser[i]);
+                questionForUser.append(" ");
             } else {
-                answerForUser.append("..");
-                answerForUser.append(" ");
+                questionForUser.append("..");
+                questionForUser.append(" ");
             }
         }
-        System.out.println(answerForUser);
-        return answerForUser.toString();
+        return questionForUser.toString();
     }
-    private static String lookingForMissingNumber(String resultForUser) {
+    private static String calculation(String resultForUser) {
         String[] arrayFromUser = resultForUser.split(" ");
-        final int numberSize = 10;
-
         int[] arrayFromUserInt = new int[numberSize];
         int result = 0;
         int numberMissingElement = 0;

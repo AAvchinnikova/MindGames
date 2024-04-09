@@ -30,7 +30,7 @@ public class App {
                     GameGCD.gameThree();
                     break;
                 case "5":
-                    new GameProgression();
+                    GameProgression.gameFour();
                     break;
                 case "6":
                     new GamePrime();
