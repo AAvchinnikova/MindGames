@@ -43,9 +43,6 @@ public class GamePrime {
         return true;
     }
     private static boolean checkPrime(boolean resultPrime, String answerUser) {
-        if (resultPrime && answerUser.equals("yes") || !resultPrime && answerUser.equals("no")) {
-            return true;
-        }
-        return false;
+        return resultPrime && answerUser.equals("yes") || !resultPrime && answerUser.equals("no");
     }
 }
