@@ -1,39 +1,37 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 
 public class GamePrime {
-
-    public static String gameFive(String answerUser, String resultForUser) {
+    private static final int maxNumber = 10;
+    public static void gameFive() {
+        Engine.meetWithUser("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Random random = new Random();
-        final int numberSize = 100;
-
-        var numberForUser = random.nextInt(numberSize);
-
-        if (answerUser.isEmpty() & resultForUser.isEmpty()) {
-            System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-            answerUser = Integer.toString(numberForUser);
-            return answerUser;
-        } else {
-            if (answerUser.equals("yes") & checkNumber(resultForUser)) {
-                answerUser = Integer.toString(numberForUser);
-            } else if (answerUser.equals("no") & !checkNumber(resultForUser)) {
-                answerUser = Integer.toString(numberForUser);
+        int number = random.nextInt(maxNumber);
+        String questionForUser = Integer.toString(number);
+        String answerUser = Engine.playWithUser(questionForUser);
+        for (var i = 1; i < 3; i++) {
+            var resultcheck = calculate(number);
+            if (resultcheck && answerUser.equals("yes") || !resultcheck && answerUser.equals("no")) {
+                System.out.println("Correct!");
+                number = random.nextInt(maxNumber);
+                questionForUser = Integer.toString(number);
+                answerUser = Engine.playWithUser(questionForUser);
             } else {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                answerUser = "Wrong";
+                Engine.finishGame("Wrong");
+                return;
             }
-        }
-        return answerUser;
+        } Engine.finishGame("");
     }
-
-    private static boolean checkNumber(String resultForUser) {
-        int numberForCheck = Integer.parseInt(resultForUser);
-        if (numberForCheck < 2) {
+    private static boolean calculate(int number) {
+        if (number < 2) {
             return false;
         }
-        for (var i = 2; i <= numberForCheck / 2; i++) {
-            if (numberForCheck % i == 0) {
+        for (var i = 2; i <= number / 2; i++) {
+            if (number % i == 0) {
                 return false;
             }
         }

@@ -1,7 +1,6 @@
 package hexlet.code;
 
 import hexlet.code.games.*;
-
 import java.util.Scanner;
 
 public class App {
@@ -33,7 +32,7 @@ public class App {
                     GameProgression.gameFour();
                     break;
                 case "6":
-                    new GamePrime();
+                    GamePrime.gameFive();
                     break;
                 case "1":
                 default:
