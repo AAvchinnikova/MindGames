@@ -6,15 +6,16 @@ import java.util.Random;
 
 public class GameEven {
     private static final int NUMBERMAX = 100;
+    static final int STEPS = 3;
     public static void gameOne() {
         Engine.meetWithUser("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();
         int number = random.nextInt(NUMBERMAX);
         String questionForUser = Integer.toString(number);
         String answerUser = Engine.playWithUser(questionForUser);
-        for (var i = 1; i <= 3; i++) {
+        for (var i = 1; i <= STEPS; i++) {
             var resultcheck = checkNumbers(number, answerUser);
-            if (resultcheck && i < 3) {
+            if (resultcheck && i < STEPS) {
                 System.out.println("Correct!");
                 number = random.nextInt(NUMBERMAX);
                 questionForUser = Integer.toString(number);

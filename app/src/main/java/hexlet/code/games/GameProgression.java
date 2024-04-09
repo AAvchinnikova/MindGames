@@ -6,14 +6,15 @@ import java.util.Random;
 
 public class GameProgression {
     private static final int NUMBERSIZE = 10;
+    static final int STEPS = 3;
 
     public static void gameFour() {
         Engine.meetWithUser("What number is missing in the progression?");
         String questionForUser = prepareQuestion();
         String answerUser = Engine.playWithUser(questionForUser);
-        for (var i = 1; i <= 3; i++) {
+        for (var i = 1; i <= STEPS; i++) {
             var calculateNumber = calculation(questionForUser);
-            if (answerUser.equals(calculateNumber) && i < 3) {
+            if (answerUser.equals(calculateNumber) && i < STEPS) {
                 System.out.println("Correct!");
                 questionForUser = prepareQuestion();
                 answerUser = Engine.playWithUser(questionForUser);

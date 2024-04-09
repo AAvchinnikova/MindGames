@@ -6,13 +6,14 @@ import java.util.Random;
 public class GameCalc {
     static final int NUMBERMAX = 100;
     static final int NUMBERCHAR = 2;
+    static final int STEPS = 3;
     public static void gameTwo() {
         Engine.meetWithUser("What is the result of the expression?");
         String questionForUser = prepareQuestion();
         String answerUser = Engine.playWithUser(questionForUser);
-        for (var i = 1; i <= 3; i++) {
+        for (var i = 1; i <= STEPS; i++) {
             var calculateNumber = calculation(questionForUser);
-            if (answerUser.equals(calculateNumber) && i < 3) {
+            if (answerUser.equals(calculateNumber) && i < STEPS) {
                 System.out.println("Correct!");
                 questionForUser = prepareQuestion();
                 answerUser = Engine.playWithUser(questionForUser);
