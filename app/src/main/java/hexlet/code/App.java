@@ -23,8 +23,6 @@ public class App {
 
         if (Integer.parseInt(numberGame) != 0) {
             switch (numberGame) {
-                case "1":
-                    new Engine();
                 case "2":
                     GameEven.gameOne();
                     break;
@@ -40,6 +38,8 @@ public class App {
                 case "6":
                     GamePrime.gameFive();
                     break;
+                case "1":
+                    Engine engine = new Engine();
                 default:
                     break;
             }
