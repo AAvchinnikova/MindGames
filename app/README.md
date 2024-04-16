@@ -4,30 +4,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/bc953fb0ab378995dab3/maintainability)](https://codeclimate.com/github/hexlet-boilerplates/java-package/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/bc953fb0ab378995dab3/test_coverage)](https://codeclimate.com/github/hexlet-boilerplates/java-package/test_coverage)
 
-## Project 1. Игры разума.
-Программа состоит из пяти игр:
-1. Проверка на четность (Even).
-2. Калькулятор (Calc).
-3. Наибольший общий делитель (GCD).
-4. Арифмитическая прогрессия (Progression).
-5. Определение простого числа (Prime).
-   Игроку дается 3 попытки на угадывание правильного ответа.
-
-## Demo game 1 (Even)
-[![asciicast](https://asciinema.org/a/86XWGF8QnV6ljcBi5Rr1vnd79.svg)](https://asciinema.org/a/86XWGF8QnV6ljcBi5Rr1vnd79)
-
-## Demo game 2 (Calc)
-[![asciicast](https://asciinema.org/a/RqE9BLsSyU8xjrLJDiyuWuhR3.svg)](https://asciinema.org/a/RqE9BLsSyU8xjrLJDiyuWuhR3)
-
-## Demo game 3 (GCD)
-[![asciicast](https://asciinema.org/a/fhW6TXdY88HsXBKqvg3rZtJ0r.svg)](https://asciinema.org/a/fhW6TXdY88HsXBKqvg3rZtJ0r)
-
-## Demo game 4 (Progression)
-[![asciicast](https://asciinema.org/a/6msw2x9w8f2WZvOnPH3nws0CU.svg)](https://asciinema.org/a/6msw2x9w8f2WZvOnPH3nws0CU)
-
-## Demo game 5 (Prime)
-[![asciicast](https://asciinema.org/a/BxEF60dMDIBRaiXwDvURUyQI8.svg)](https://asciinema.org/a/BxEF60dMDIBRaiXwDvURUyQI8)
-
 ## Start
 
 ```bash
