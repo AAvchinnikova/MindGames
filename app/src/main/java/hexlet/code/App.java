@@ -41,6 +41,7 @@ public class App {
                 case "1":
                     new Engine();
                 default:
+                    System.out.println("Not the correct choice");
                     break;
             }
         }

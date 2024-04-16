@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Engine {
     private static String userName;
-
+    public static final int STEPS = 3;
     static {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nWelcome to the Brain Games!");

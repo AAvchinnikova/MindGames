@@ -6,14 +6,14 @@ import java.util.Random;
 public class GameCalc {
     static final int NUMBERMAX = 100;
     static final int NUMBERCHAR = 2;
-    static final int STEPS = 3;
     public static void gameTwo() {
         Engine.meetWithUser("What is the result of the expression?");
         String questionForUser = prepareQuestion();
         String answerUser = Engine.playWithUser(questionForUser);
-        for (var i = 1; i <= STEPS; i++) {
-            var calculateNumber = calculation(questionForUser);
-            if (answerUser.equals(calculateNumber) && i < STEPS) {
+        for (var i = 1; i <= Engine.STEPS; i++) {
+            var calculateNumberInt = calculation(questionForUser);
+            var calculateNumber = Integer.toString(calculateNumberInt);
+            if (answerUser.equals(calculateNumber) && i < Engine.STEPS) {
                 System.out.println("Correct!");
                 questionForUser = prepareQuestion();
                 answerUser = Engine.playWithUser(questionForUser);
@@ -38,7 +38,7 @@ public class GameCalc {
         String sing = calculationSigns[numberToSelect];
         return numberOne + " " + sing + " " + numberTwo;
     }
-    public static String calculation(String questionForUser) {
+    public static int calculation(String questionForUser) {
         var mathExample = questionForUser.split(" ");
         var firstNumber = mathExample[0];
         var secondNumber = mathExample[2];
@@ -57,6 +57,6 @@ public class GameCalc {
             default:
                 throw new IllegalStateException("Unexpected value: " + singForCallculate);
         }
-        return Integer.toString(result);
+        return result;
     }
 }
