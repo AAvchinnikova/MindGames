@@ -11,7 +11,7 @@
 3. Наибольший общий делитель (GCD).
 4. Арифмитическая прогрессия (Progression).
 5. Определение простого числа (Prime).
-Игроку дается 3 попытки на угадывание правильного ответа.
+   Игроку дается 3 попытки на угадывание правильного ответа.
 
 ## Demo game 1 (Even)
 [![asciicast](https://asciinema.org/a/86XWGF8QnV6ljcBi5Rr1vnd79.svg)](https://asciinema.org/a/86XWGF8QnV6ljcBi5Rr1vnd79)
