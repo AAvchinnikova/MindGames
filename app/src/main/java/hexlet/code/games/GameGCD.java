@@ -4,30 +4,24 @@ import hexlet.code.Engine;
 
 import java.util.Random;
 
+import static hexlet.code.Engine.NUMBERARRAY;
+import static hexlet.code.Engine.STEPS;
+
 public class GameGCD {
     private static final int NUMBERSIZE = 10;
 
     public static void gameThree() {
         Engine.meetWithUser("Find the greatest common divisor of given numbers.");
-        String questionForUser = prepareQuestion();
-        String answerUser = Engine.playWithUser(questionForUser);
-        for (var i = 1; i <= Engine.STEPS; i++) {
-            var calculateNumber = calculation(questionForUser);
-            if (answerUser.equals(calculateNumber) && i < Engine.STEPS) {
-                System.out.println("Correct!");
-                questionForUser = prepareQuestion();
-                answerUser = Engine.playWithUser(questionForUser);
-            } else if (answerUser.equals(calculateNumber)) {
-                System.out.println("Correct!");
-                answerUser = "";
-            } else {
-                System.out.println(answerUser + " is wrong answer ;(. Correct answer was "
-                        + calculateNumber + ".");
-                Engine.finishGame("Wrong");
-                return;
-            }
+        String[][] dateForGame = new String[STEPS][NUMBERARRAY];
+        for (var i = 0; i < STEPS; i++) {
+            String question = prepareQuestion();
+            int answer = calculation(question);
+            var j = 0;
+            dateForGame[i][j] = question;
+            j += 1;
+            dateForGame[i][j] = String.valueOf(answer);
         }
-        Engine.finishGame("");
+        Engine.playWithUser(dateForGame);
     }
     public static String prepareQuestion() {
         Random random = new Random();
@@ -35,8 +29,8 @@ public class GameGCD {
         int numberTwo = random.nextInt(NUMBERSIZE);
         return numberOne + " " + numberTwo;
     }
-    private static String calculation(String resultForUser) {
-        var mathExample = resultForUser.split(" ");
+    private static int calculation(String question) {
+        var mathExample = question.split(" ");
         var firstNumber = mathExample[0];
         var secondNumber = mathExample[1];
         int firstNumberInt = Integer.parseInt(firstNumber);
@@ -48,7 +42,6 @@ public class GameGCD {
                 secondNumberInt = secondNumberInt % firstNumberInt;
             }
         }
-        int result = firstNumberInt + secondNumberInt;
-        return Integer.toString(result);
+        return firstNumberInt + secondNumberInt;
     }
 }

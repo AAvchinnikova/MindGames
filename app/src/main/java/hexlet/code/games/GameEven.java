@@ -4,33 +4,30 @@ import hexlet.code.Engine;
 
 import java.util.Random;
 
+import static hexlet.code.Engine.NUMBERARRAY;
+import static hexlet.code.Engine.STEPS;
+
 public class GameEven {
     private static final int NUMBERMAX = 100;
 
     public static void gameOne() {
         Engine.meetWithUser("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();
-        int number = random.nextInt(NUMBERMAX);
-        String questionForUser = Integer.toString(number);
-        String answerUser = Engine.playWithUser(questionForUser);
-        for (var i = 1; i <= Engine.STEPS; i++) {
-            boolean isValid;
-            isValid = number % 2 == 0 && answerUser.equals("yes") || number % 2 != 0 && answerUser.equals("no");
-            //var resultcheck = checkNumbers(number, answerUser);
-            if (isValid && i < Engine.STEPS) {
-                System.out.println("Correct!");
-                number = random.nextInt(NUMBERMAX);
-                questionForUser = Integer.toString(number);
-                answerUser = Engine.playWithUser(questionForUser);
-            } else if (isValid) {
-                System.out.println("Correct!");
-                answerUser = "";
+        String[][] dateForGame = new String[STEPS][NUMBERARRAY];
+        for (var i = 0; i < STEPS; i++) {
+            int number = random.nextInt(NUMBERMAX);
+            String question = Integer.toString(number);
+            String answer;
+            var j = 0;
+            if (number % 2 == 0) {
+                answer = "yes";
             } else {
-                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                Engine.finishGame("Wrong");
-                return;
+                answer = "no";
             }
+            dateForGame[i][j] = question;
+            j += 1;
+            dateForGame[i][j] = answer;
         }
-        Engine.finishGame("");
+        Engine.playWithUser(dateForGame);
     }
 }

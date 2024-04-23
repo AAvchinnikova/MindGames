@@ -4,33 +4,33 @@ import hexlet.code.Engine;
 
 import java.util.Random;
 
+import static hexlet.code.Engine.NUMBERARRAY;
+import static hexlet.code.Engine.STEPS;
+
 public class GamePrime {
     private static final int NUMBERMAX = 10;
+
 
     public static void gameFive() {
         Engine.meetWithUser("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Random random = new Random();
-        int number = random.nextInt(NUMBERMAX);
-        String questionForUser = Integer.toString(number);
-        String answerUser = Engine.playWithUser(questionForUser);
-        for (var i = 1; i <= Engine.STEPS; i++) {
-            var resultPrime = calculate(number);
-            var resultcheck = checkPrime(resultPrime, answerUser);
-            if (resultcheck && i < Engine.STEPS) {
-                System.out.println("Correct!");
-                number = random.nextInt(NUMBERMAX);
-                questionForUser = Integer.toString(number);
-                answerUser = Engine.playWithUser(questionForUser);
-            } else if (resultcheck) {
-                System.out.println("Correct!");
-                answerUser = "";
-
+        String[][] dateForGame = new String[STEPS][NUMBERARRAY];
+        for (var i = 0; i < STEPS; i++) {
+            int number = random.nextInt(NUMBERMAX);
+            String question = Integer.toString(number);
+            String answer;
+            var j = 0;
+            if (calculate(number)) {
+                answer = "yes";
             } else {
-                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                Engine.finishGame("Wrong");
-                return;
+                answer = "no";
             }
-        } Engine.finishGame("");
+            dateForGame[i][j] = question;
+            j += 1;
+            dateForGame[i][j] = answer;
+        }
+        Engine.playWithUser(dateForGame);
+
     }
     private static boolean calculate(int number) {
         if (number < 2) {
@@ -43,7 +43,5 @@ public class GamePrime {
         }
         return true;
     }
-    private static boolean checkPrime(boolean resultPrime, String answerUser) {
-        return resultPrime && answerUser.equals("yes") || !resultPrime && answerUser.equals("no");
-    }
+
 }

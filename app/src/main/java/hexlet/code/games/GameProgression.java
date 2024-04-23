@@ -4,30 +4,24 @@ import hexlet.code.Engine;
 
 import java.util.Random;
 
+import static hexlet.code.Engine.NUMBERARRAY;
+import static hexlet.code.Engine.STEPS;
+
 public class GameProgression {
     private static final int NUMBERSIZE = 10;
 
     public static void gameFour() {
         Engine.meetWithUser("What number is missing in the progression?");
-        String questionForUser = prepareQuestion();
-        String answerUser = Engine.playWithUser(questionForUser);
-        for (var i = 1; i <= Engine.STEPS; i++) {
-            var calculateNumber = calculation(questionForUser);
-            if (answerUser.equals(calculateNumber) && i < Engine.STEPS) {
-                System.out.println("Correct!");
-                questionForUser = prepareQuestion();
-                answerUser = Engine.playWithUser(questionForUser);
-            } else if (answerUser.equals(calculateNumber)) {
-                System.out.println("Correct!");
-                answerUser = "";
-            } else {
-                System.out.println(answerUser + " is wrong answer ;(. Correct answer was "
-                        + calculateNumber + ".");
-                Engine.finishGame("Wrong");
-                return;
-            }
+        String[][] dateForGame = new String[STEPS][NUMBERARRAY];
+        for (var i = 0; i < STEPS; i++) {
+            String question = prepareQuestion();
+            int answer = calculation(question);
+            var j = 0;
+            dateForGame[i][j] = question;
+            j += 1;
+            dateForGame[i][j] = String.valueOf(answer);
         }
-        Engine.finishGame("");
+        Engine.playWithUser(dateForGame);
     }
     private static String prepareQuestion() {
         Random random = new Random();
@@ -52,7 +46,7 @@ public class GameProgression {
         }
         return questionForUser.toString();
     }
-    private static String calculation(String resultForUser) {
+    private static int calculation(String resultForUser) {
         String[] arrayFromUser = resultForUser.split(" ");
         int[] arrayFromUserInt = new int[NUMBERSIZE];
         int result = 0;
@@ -79,6 +73,6 @@ public class GameProgression {
                 }
             }
         }
-        return Integer.toString(result);
+        return result;
     }
 }
