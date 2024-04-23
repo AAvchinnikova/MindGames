@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Engine {
     private static final String USERNAME;
+
     public static final int STEPS = 3;
     static {
         Scanner scanner = new Scanner(System.in);
@@ -20,6 +21,7 @@ public class Engine {
         System.out.println("Question: " + questionForUser);
         String answerUser = scanner.next();
         System.out.println("Your answer: " + answerUser);
+        System.out.println("Correct!");
         return answerUser;
     }
     public static void finishGame(String questionForUser) {

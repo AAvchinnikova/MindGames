@@ -1,33 +1,26 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
+import static hexlet.code.Engine.STEPS;
+
 public class GameCalc {
-    static final int NUMBERMAX = 100;
+    static final int NUMBERMAX = 10;
     static final int NUMBERCHAR = 2;
     public static void gameTwo() {
         Engine.meetWithUser("What is the result of the expression?");
-        String questionForUser = prepareQuestion();
-        String answerUser = Engine.playWithUser(questionForUser);
-        for (var i = 1; i <= Engine.STEPS; i++) {
-            var calculateNumberInt = calculation(questionForUser);
-            var calculateNumber = Integer.toString(calculateNumberInt);
-            if (answerUser.equals(calculateNumber) && i < Engine.STEPS) {
-                System.out.println("Correct!");
-                questionForUser = prepareQuestion();
-                answerUser = Engine.playWithUser(questionForUser);
-            } else if (answerUser.equals(calculateNumber)) {
-                System.out.println("Correct!");
-                answerUser = "";
-            } else {
-                System.out.println(answerUser + " is wrong answer ;(. Correct answer was "
-                        + calculateNumber + ".");
-                Engine.finishGame("Wrong");
-                return;
-            }
+        HashMap<String, String> dateForGame = new HashMap<>();
+        for (var i = 0; i < STEPS; i++) {
+            String question = prepareQuestion();
+            int answer = calculation(question);
+            dateForGame.put(question, String.valueOf(answer));
         }
-        Engine.finishGame("");
+        Engine.p
     }
     public static String prepareQuestion() {
         Random random = new Random();
