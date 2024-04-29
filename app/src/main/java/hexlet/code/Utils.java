@@ -9,8 +9,12 @@ public class Utils {
         Random random = new Random();
         return random.nextInt(NUMBERMAX);
     }
-    public static int getRandomInt(int NUMBERMAX) {
-        Random random = new Random(NUMBERMAX);
-        return random.nextInt(NUMBERMAX);
+    public static int getRandomInt(int numberMux) {
+        Random random = new Random();
+        return random.nextInt(numberMux);
+    }
+    public static int getRandomInt(int min, int max) {
+        Random random = new Random();
+        return (int) ((Math.random() * (max - min)) + min);
     }
 }

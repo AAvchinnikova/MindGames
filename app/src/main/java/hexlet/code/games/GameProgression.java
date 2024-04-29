@@ -6,73 +6,44 @@ import static hexlet.code.Engine.NUMBERARRAY;
 import static hexlet.code.Engine.STEPS;
 
 public class GameProgression {
-    private static final int NUMBERSIZE = 10;
+    static final int minSizeArray = 10;
+    static final int maxSizeArray = 15;
 
     public static void gameFour() {
         String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
         var j = 0;
-        var i = 0;
-        for (i = 0; i < STEPS; i++) {
-            String question = prepareQuestion();
-            int answer = calculation(question);
+        for (var i = 0; i < STEPS; i++) {
+            int numberSize = Utils.getRandomInt(minSizeArray, maxSizeArray);
+            int firstNumber = Utils.getRandomInt();
+            int stepForArray = Utils.getRandomInt() + 1;
+            int[] questionArray = prepareQuestion(numberSize, firstNumber, stepForArray);
+            int indexOfNumberMiss = Utils.getRandomInt(numberSize - 1);
+            String answer = Integer.toString(questionArray[indexOfNumberMiss]);
+            String question = question(questionArray, indexOfNumberMiss);
             dateForGame[i][j] = question;
-            j += 1;
-            dateForGame[i][j] = String.valueOf(answer);
-            j = 0;
+            dateForGame[i][j + 1] = answer;
         }
         dateForGame[STEPS][j] = "Rules";
         dateForGame[STEPS][j + 1] = "What number is missing in the progression?";
         Engine.playWithUser(dateForGame);
     }
-    private static String prepareQuestion() {
-        int firstNumber = Utils.getRandomInt();
-        int numberToAdd = Utils.getRandomInt() + 1;
-        int positionForMission = Utils.getRandomInt();
-        int[] arrayForUser = new int[NUMBERSIZE];
+
+    private static int[] prepareQuestion(int numberSize, int firstNumber, int step) {
+        int[] arrayForUser = new int[numberSize];
         arrayForUser[0] = firstNumber;
-        var questionForUser = new StringBuilder();
+        var number = firstNumber;
         for (var i = 1; i < arrayForUser.length; i++) {
-            arrayForUser[i] = firstNumber + numberToAdd;
-            firstNumber = firstNumber + numberToAdd;
+            number = number + step;
+            arrayForUser[i] = number;
         }
-        for (var i = 0; i < arrayForUser.length; i++) {
-            if (i != positionForMission) {
-                questionForUser.append(arrayForUser[i]);
-                questionForUser.append(" ");
-            } else {
-                questionForUser.append("..");
-                questionForUser.append(" ");
-            }
-        }
-        return questionForUser.toString();
+        return arrayForUser;
     }
-    private static int calculation(String resultForUser) {
-        String[] arrayFromUser = resultForUser.split(" ");
-        int[] arrayFromUserInt = new int[NUMBERSIZE];
-        int result = 0;
-        int numberMissingElement = 0;
-        var difference = 0;
-        for (var i = 0; i < arrayFromUser.length; i++) { //calculate index missing Element
-            if (arrayFromUser[i].equals("..")) {
-                numberMissingElement = i;
-            }
+    private  static String question(int[] arrayForUser, int indexOfNumberMiss) {
+        String[] questionArray = new String[arrayForUser.length];
+        for (var i = 0; i < arrayForUser.length; i++) {
+            questionArray[i] = Integer.toString(arrayForUser[i]);
         }
-        arrayFromUser[numberMissingElement] = "0";
-        for (var i = 0; i < arrayFromUser.length; i++) { //make int array
-            arrayFromUserInt[i] = Integer.parseInt(arrayFromUser[i]);
-        }
-        if (numberMissingElement == 0) { //for case, when missing element is the first
-            difference = arrayFromUserInt[2] - arrayFromUserInt[1];
-            result = arrayFromUserInt[1] - difference;
-        } else {
-            for (var i = 0; i < arrayFromUser.length; i++) {
-                if (arrayFromUserInt[i + 1] != 0 & arrayFromUserInt[i] != 0) {
-                    difference = arrayFromUserInt[i + 1] - arrayFromUserInt[i];
-                    result = arrayFromUserInt[numberMissingElement - 1] + difference;
-                    break;
-                }
-            }
-        }
-        return result;
+        questionArray[indexOfNumberMiss] = "..";
+        return String.join(" ", questionArray);
     }
 }
