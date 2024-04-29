@@ -14,7 +14,6 @@ public class Utils {
         return random.nextInt(numberMux);
     }
     public static int getRandomInt(int min, int max) {
-        Random random = new Random();
         return (int) ((Math.random() * (max - min)) + min);
     }
 }

@@ -6,14 +6,14 @@ import static hexlet.code.Engine.NUMBERARRAY;
 import static hexlet.code.Engine.STEPS;
 
 public class GameProgression {
-    static final int minSizeArray = 10;
-    static final int maxSizeArray = 15;
+    static final int MINSIZEARRAY = 10;
+    static final int MAXSIZEARRAY = 15;
 
     public static void gameFour() {
         String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
         var j = 0;
         for (var i = 0; i < STEPS; i++) {
-            int numberSize = Utils.getRandomInt(minSizeArray, maxSizeArray);
+            int numberSize = Utils.getRandomInt(MINSIZEARRAY, MAXSIZEARRAY);
             int firstNumber = Utils.getRandomInt();
             int stepForArray = Utils.getRandomInt() + 1;
             int[] questionArray = prepareQuestion(numberSize, firstNumber, stepForArray);
