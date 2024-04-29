@@ -12,14 +12,14 @@ public class GamePrime {
 
 
     public static void gameFive() {
-        Engine.meetWithUser("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Random random = new Random();
-        String[][] dateForGame = new String[STEPS][NUMBERARRAY];
-        for (var i = 0; i < STEPS; i++) {
+        String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
+        var j = 0;
+        var i = 0;
+        for (i = 0; i < STEPS; i++) {
             int number = random.nextInt(NUMBERMAX);
             String question = Integer.toString(number);
             String answer;
-            var j = 0;
             if (calculate(number)) {
                 answer = "yes";
             } else {
@@ -28,7 +28,10 @@ public class GamePrime {
             dateForGame[i][j] = question;
             j += 1;
             dateForGame[i][j] = answer;
+            j = 0;
         }
+        dateForGame[STEPS][j] = "Rules";
+        dateForGame[STEPS][j + 1] = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         Engine.playWithUser(dateForGame);
 
     }

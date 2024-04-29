@@ -11,16 +11,19 @@ public class GameProgression {
     private static final int NUMBERSIZE = 10;
 
     public static void gameFour() {
-        Engine.meetWithUser("What number is missing in the progression?");
-        String[][] dateForGame = new String[STEPS][NUMBERARRAY];
-        for (var i = 0; i < STEPS; i++) {
+        String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
+        var j = 0;
+        var i = 0;
+        for (i = 0; i < STEPS; i++) {
             String question = prepareQuestion();
             int answer = calculation(question);
-            var j = 0;
             dateForGame[i][j] = question;
             j += 1;
             dateForGame[i][j] = String.valueOf(answer);
+            j = 0;
         }
+        dateForGame[STEPS][j] = "Rules";
+        dateForGame[STEPS][j + 1] = "What number is missing in the progression?";
         Engine.playWithUser(dateForGame);
     }
     private static String prepareQuestion() {

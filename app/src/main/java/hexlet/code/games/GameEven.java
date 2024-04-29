@@ -11,14 +11,14 @@ public class GameEven {
     private static final int NUMBERMAX = 100;
 
     public static void gameOne() {
-        Engine.meetWithUser("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();
-        String[][] dateForGame = new String[STEPS][NUMBERARRAY];
-        for (var i = 0; i < STEPS; i++) {
+        String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
+        var j = 0;
+        var i = 0;
+        for (i = 0; i < STEPS; i++) {
             int number = random.nextInt(NUMBERMAX);
             String question = Integer.toString(number);
             String answer;
-            var j = 0;
             if (number % 2 == 0) {
                 answer = "yes";
             } else {
@@ -27,7 +27,10 @@ public class GameEven {
             dateForGame[i][j] = question;
             j += 1;
             dateForGame[i][j] = answer;
+            j = 0;
         }
+        dateForGame[STEPS][j] = "Rules";
+        dateForGame[STEPS][j + 1] = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         Engine.playWithUser(dateForGame);
     }
 }
