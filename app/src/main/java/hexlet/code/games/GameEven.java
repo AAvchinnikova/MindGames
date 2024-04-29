@@ -15,7 +15,7 @@ public class GameEven {
             int number = Utils.getRandomInt();
             String question = Integer.toString(number);
             String answer;
-            if (number % 2 == 0) {
+            if (isEven(number)) {
                 answer = "yes";
             } else {
                 answer = "no";
@@ -28,5 +28,8 @@ public class GameEven {
         dateForGame[STEPS][j] = "Rules";
         dateForGame[STEPS][j + 1] = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         Engine.playWithUser(dateForGame);
+    }
+    private static boolean isEven(int number) {
+        return number % 2 == 0;
     }
 }

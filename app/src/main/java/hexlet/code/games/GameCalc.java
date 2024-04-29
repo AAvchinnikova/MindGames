@@ -14,7 +14,8 @@ public class GameCalc {
         var i = 0;
         for (i = 0; i < STEPS; i++) {
             String question = prepareQuestion();
-            int answer = calculation(question);
+            var mathExample = question.split(" ");
+            int answer = calculation(mathExample[0], mathExample[1], mathExample[2]);
             dateForGame[i][j] = question;
             j += 1;
             dateForGame[i][j] = String.valueOf(answer);
@@ -25,7 +26,7 @@ public class GameCalc {
         Engine.playWithUser(dateForGame);
     }
 
-    public static String prepareQuestion() {
+    private static String prepareQuestion() {
         int numberOne = Utils.getRandomInt();
         int numberTwo = Utils.getRandomInt();
         int numberToSelect = Utils.getRandomInt(NUMBERCHAR);
@@ -34,11 +35,7 @@ public class GameCalc {
         return numberOne + " " + sing + " " + numberTwo;
     }
 
-    public static int calculation(String questionForUser) {
-        var mathExample = questionForUser.split(" ");
-        var firstNumber = mathExample[0];
-        var secondNumber = mathExample[2];
-        String singForCallculate = mathExample[1];
+    private static int calculation(String firstNumber, String singForCallculate, String secondNumber) {
         int result;
         switch (singForCallculate) {
             case "+":
