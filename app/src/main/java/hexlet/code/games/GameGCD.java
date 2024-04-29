@@ -24,8 +24,8 @@ public class GameGCD {
         Engine.playWithUser(dateForGame);
     }
     public static String prepareQuestion() {
-        int numberOne = Utils.randomNumber();
-        int numberTwo = Utils.randomNumber();
+        int numberOne = Utils.getRandomInt();
+        int numberTwo = Utils.getRandomInt();
         return numberOne + " " + numberTwo;
     }
     private static int calculation(String question) {

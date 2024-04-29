@@ -26,9 +26,9 @@ public class GameCalc {
     }
 
     public static String prepareQuestion() {
-        int numberOne = Utils.randomNumber();
-        int numberTwo = Utils.randomNumber();
-        int numberToSelect = Utils.randomNumber(NUMBERCHAR);
+        int numberOne = Utils.getRandomInt();
+        int numberTwo = Utils.getRandomInt();
+        int numberToSelect = Utils.getRandomInt(NUMBERCHAR);
         String[] calculationSigns = {"+", "-", "*"};
         String sing = calculationSigns[numberToSelect];
         return numberOne + " " + sing + " " + numberTwo;

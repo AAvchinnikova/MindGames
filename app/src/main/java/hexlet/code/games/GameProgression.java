@@ -25,9 +25,9 @@ public class GameProgression {
         Engine.playWithUser(dateForGame);
     }
     private static String prepareQuestion() {
-        int firstNumber = Utils.randomNumber();
-        int numberToAdd = Utils.randomNumber() + 1;
-        int positionForMission = Utils.randomNumber();
+        int firstNumber = Utils.getRandomInt();
+        int numberToAdd = Utils.getRandomInt() + 1;
+        int positionForMission = Utils.getRandomInt();
         int[] arrayForUser = new int[NUMBERSIZE];
         arrayForUser[0] = firstNumber;
         var questionForUser = new StringBuilder();

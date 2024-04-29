@@ -12,7 +12,7 @@ public class GameEven {
         var j = 0;
         var i = 0;
         for (i = 0; i < STEPS; i++) {
-            int number = Utils.randomNumber();
+            int number = Utils.getRandomInt();
             String question = Integer.toString(number);
             String answer;
             if (number % 2 == 0) {
