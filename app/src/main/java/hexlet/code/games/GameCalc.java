@@ -1,13 +1,11 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.Random;
-
+import hexlet.code.Utils;
 import static hexlet.code.Engine.NUMBERARRAY;
 import static hexlet.code.Engine.STEPS;
 
 public class GameCalc {
-    static final int NUMBERMAX = 10;
     static final int NUMBERCHAR = 2;
 
     public static void gameTwo() {
@@ -28,10 +26,9 @@ public class GameCalc {
     }
 
     public static String prepareQuestion() {
-        Random random = new Random();
-        int numberOne = random.nextInt(NUMBERMAX);
-        int numberTwo = random.nextInt(NUMBERMAX);
-        int numberToSelect = random.nextInt(NUMBERCHAR);
+        int numberOne = Utils.randomNumber();
+        int numberTwo = Utils.randomNumber();
+        int numberToSelect = Utils.randomNumber(NUMBERCHAR);
         String[] calculationSigns = {"+", "-", "*"};
         String sing = calculationSigns[numberToSelect];
         return numberOne + " " + sing + " " + numberTwo;

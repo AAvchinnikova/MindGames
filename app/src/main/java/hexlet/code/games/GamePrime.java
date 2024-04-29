@@ -1,23 +1,18 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Random;
-
+import hexlet.code.Utils;
 import static hexlet.code.Engine.NUMBERARRAY;
 import static hexlet.code.Engine.STEPS;
 
 public class GamePrime {
-    private static final int NUMBERMAX = 10;
-
 
     public static void gameFive() {
-        Random random = new Random();
         String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
         var j = 0;
         var i = 0;
         for (i = 0; i < STEPS; i++) {
-            int number = random.nextInt(NUMBERMAX);
+            int number = Utils.randomNumber();
             String question = Integer.toString(number);
             String answer;
             if (calculate(number)) {

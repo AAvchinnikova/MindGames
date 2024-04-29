@@ -1,22 +1,18 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Random;
-
+import hexlet.code.Utils;
 import static hexlet.code.Engine.NUMBERARRAY;
 import static hexlet.code.Engine.STEPS;
 
 public class GameEven {
-    private static final int NUMBERMAX = 100;
 
     public static void gameOne() {
-        Random random = new Random();
         String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
         var j = 0;
         var i = 0;
         for (i = 0; i < STEPS; i++) {
-            int number = random.nextInt(NUMBERMAX);
+            int number = Utils.randomNumber();
             String question = Integer.toString(number);
             String answer;
             if (number % 2 == 0) {

@@ -1,14 +1,11 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Random;
-
+import hexlet.code.Utils;
 import static hexlet.code.Engine.NUMBERARRAY;
 import static hexlet.code.Engine.STEPS;
 
 public class GameGCD {
-    private static final int NUMBERSIZE = 10;
 
     public static void gameThree() {
         String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
@@ -27,9 +24,8 @@ public class GameGCD {
         Engine.playWithUser(dateForGame);
     }
     public static String prepareQuestion() {
-        Random random = new Random();
-        int numberOne = random.nextInt(NUMBERSIZE);
-        int numberTwo = random.nextInt(NUMBERSIZE);
+        int numberOne = Utils.randomNumber();
+        int numberTwo = Utils.randomNumber();
         return numberOne + " " + numberTwo;
     }
     private static int calculation(String question) {

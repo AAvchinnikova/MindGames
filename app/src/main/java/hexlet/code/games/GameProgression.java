@@ -1,9 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Random;
-
+import hexlet.code.Utils;
 import static hexlet.code.Engine.NUMBERARRAY;
 import static hexlet.code.Engine.STEPS;
 
@@ -27,10 +25,9 @@ public class GameProgression {
         Engine.playWithUser(dateForGame);
     }
     private static String prepareQuestion() {
-        Random random = new Random();
-        int firstNumber = random.nextInt(NUMBERSIZE);
-        int numberToAdd = random.nextInt(NUMBERSIZE) + 1;
-        int positionForMission = random.nextInt(NUMBERSIZE);
+        int firstNumber = Utils.randomNumber();
+        int numberToAdd = Utils.randomNumber() + 1;
+        int positionForMission = Utils.randomNumber();
         int[] arrayForUser = new int[NUMBERSIZE];
         arrayForUser[0] = firstNumber;
         var questionForUser = new StringBuilder();
