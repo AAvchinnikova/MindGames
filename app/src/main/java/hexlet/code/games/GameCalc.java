@@ -8,14 +8,15 @@ import static hexlet.code.Engine.STEPS;
 public class GameCalc {
     static final int NUMBERCHAR = 2;
 
-    public static void gameTwo() {
+    public static void dataEntry() {
         String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
         var j = 0;
         var i = 0;
         for (i = 0; i < STEPS; i++) {
             String question = prepareQuestion();
             var mathExample = question.split(" ");
-            int answer = calculation(mathExample[0], mathExample[1], mathExample[2]);
+            int answer = calculation(Integer.parseInt(mathExample[0]),
+                    mathExample[1].charAt(0), Integer.parseInt(mathExample[2]));
             dateForGame[i][j] = question;
             j += 1;
             dateForGame[i][j] = String.valueOf(answer);
@@ -30,22 +31,22 @@ public class GameCalc {
         int numberOne = Utils.getRandomInt();
         int numberTwo = Utils.getRandomInt();
         int numberToSelect = Utils.getRandomInt(NUMBERCHAR);
-        String[] calculationSigns = {"+", "-", "*"};
-        String sing = calculationSigns[numberToSelect];
+        char[] calculationSigns = {'+', '-', '*'};
+        char sing = calculationSigns[numberToSelect];
         return numberOne + " " + sing + " " + numberTwo;
     }
 
-    private static int calculation(String firstNumber, String singForCallculate, String secondNumber) {
+    private static int calculation(int firstNumber, char singForCallculate, int secondNumber) {
         int result;
         switch (singForCallculate) {
-            case "+":
-                result = Integer.parseInt(firstNumber) + Integer.parseInt(secondNumber);
+            case '+':
+                result = firstNumber + secondNumber;
                 break;
-            case "-":
-                result = Integer.parseInt(firstNumber) - Integer.parseInt(secondNumber);
+            case '-':
+                result = firstNumber - secondNumber;
                 break;
-            case "*":
-                result = Integer.parseInt(firstNumber) * Integer.parseInt(secondNumber);
+            case '*':
+                result = firstNumber * secondNumber;
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + singForCallculate);

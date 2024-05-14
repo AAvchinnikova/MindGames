@@ -23,23 +23,24 @@ public class App {
 
         if (Integer.parseInt(numberGame) != 0) {
             switch (numberGame) {
+                case "1":
+                    Cli.console();
+                    break;
                 case "2":
-                    GameEven.gameOne();
+                    GameEven.dataEntry();
                     break;
                 case "3":
-                    GameCalc.gameTwo();
+                    GameCalc.dataEntry();
                     break;
                 case "4":
-                    GameGCD.gameThree();
+                    GameGCD.dataEntry();
                     break;
                 case "5":
-                    GameProgression.gameFour();
+                    GameProgression.dataEntry();
                     break;
                 case "6":
-                    GamePrime.gameFive();
+                    GamePrime.dataEntry();
                     break;
-                case "1":
-                    new Engine();
                 default:
                     System.out.println("Not the correct choice");
                     break;

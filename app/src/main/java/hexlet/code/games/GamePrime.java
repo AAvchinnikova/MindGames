@@ -7,7 +7,7 @@ import static hexlet.code.Engine.STEPS;
 
 public class GamePrime {
 
-    public static void gameFive() {
+    public static void dataEntry() {
         String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
         var j = 0;
         var i = 0;
@@ -15,7 +15,7 @@ public class GamePrime {
             int number = Utils.getRandomInt();
             String question = Integer.toString(number);
             String answer;
-            if (calculate(number)) {
+            if (definePrime(number)) {
                 answer = "yes";
             } else {
                 answer = "no";
@@ -30,7 +30,7 @@ public class GamePrime {
         Engine.playWithUser(dateForGame);
 
     }
-    private static boolean calculate(int number) {
+    private static boolean definePrime(int number) {
         if (number < 2) {
             return false;
         }

@@ -7,13 +7,15 @@ import static hexlet.code.Engine.STEPS;
 
 public class GameGCD {
 
-    public static void gameThree() {
+    public static void dataEntry() {
         String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
         var j = 0;
         var i = 0;
         for (i = 0; i < STEPS; i++) {
-            String question = prepareQuestion();
-            int answer = calculation(question);
+            int numberOne = Utils.getRandomInt();
+            int numberTwo = Utils.getRandomInt();
+            String question = numberOne + " " + numberTwo;
+            int answer = calculation(numberOne, numberTwo);
             dateForGame[i][j] = question;
             j += 1;
             dateForGame[i][j] = String.valueOf(answer);
@@ -23,24 +25,15 @@ public class GameGCD {
         dateForGame[STEPS][j + 1] = "Find the greatest common divisor of given numbers.";
         Engine.playWithUser(dateForGame);
     }
-    public static String prepareQuestion() {
-        int numberOne = Utils.getRandomInt();
-        int numberTwo = Utils.getRandomInt();
-        return numberOne + " " + numberTwo;
-    }
-    private static int calculation(String question) {
-        var mathExample = question.split(" ");
-        var firstNumber = mathExample[0];
-        var secondNumber = mathExample[1];
-        int firstNumberInt = Integer.parseInt(firstNumber);
-        int secondNumberInt = Integer.parseInt(secondNumber);
-        while (firstNumberInt != 0 & secondNumberInt != 0) {
-            if (firstNumberInt > secondNumberInt) {
-                firstNumberInt = firstNumberInt % secondNumberInt;
+
+    private static int calculation(int numberOne, int numberTwo) {
+        while (numberOne != 0 & numberTwo != 0) {
+            if (numberOne > numberTwo) {
+                numberOne = numberOne % numberTwo;
             } else {
-                secondNumberInt = secondNumberInt % firstNumberInt;
+                numberTwo = numberTwo % numberOne;
             }
         }
-        return firstNumberInt + secondNumberInt;
+        return numberOne + numberTwo;
     }
 }

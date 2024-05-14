@@ -7,7 +7,7 @@ import static hexlet.code.Engine.STEPS;
 
 public class GameEven {
 
-    public static void gameOne() {
+    public static void dataEntry() {
         String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
         var j = 0;
         var i = 0;

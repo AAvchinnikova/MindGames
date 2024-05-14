@@ -9,17 +9,17 @@ public class GameProgression {
     static final int MINSIZEARRAY = 10;
     static final int MAXSIZEARRAY = 15;
 
-    public static void gameFour() {
+    public static void dataEntry() {
         String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
         var j = 0;
         for (var i = 0; i < STEPS; i++) {
             int numberSize = Utils.getRandomInt(MINSIZEARRAY, MAXSIZEARRAY);
             int firstNumber = Utils.getRandomInt();
             int stepForArray = Utils.getRandomInt() + 1;
-            int[] questionArray = prepareQuestion(numberSize, firstNumber, stepForArray);
+            int[] questionArray = makeProgression(numberSize, firstNumber, stepForArray);
             int indexOfNumberMiss = Utils.getRandomInt(numberSize - 1);
             String answer = Integer.toString(questionArray[indexOfNumberMiss]);
-            String question = question(questionArray, indexOfNumberMiss);
+            String question = makeQuestion(questionArray, indexOfNumberMiss);
             dateForGame[i][j] = question;
             dateForGame[i][j + 1] = answer;
         }
@@ -28,7 +28,7 @@ public class GameProgression {
         Engine.playWithUser(dateForGame);
     }
 
-    private static int[] prepareQuestion(int numberSize, int firstNumber, int step) {
+    private static int[] makeProgression(int numberSize, int firstNumber, int step) {
         int[] arrayForUser = new int[numberSize];
         arrayForUser[0] = firstNumber;
         var number = firstNumber;
@@ -38,7 +38,7 @@ public class GameProgression {
         }
         return arrayForUser;
     }
-    private  static String question(int[] arrayForUser, int indexOfNumberMiss) {
+    private  static String makeQuestion(int[] arrayForUser, int indexOfNumberMiss) {
         String[] questionArray = new String[arrayForUser.length];
         for (var i = 0; i < arrayForUser.length; i++) {
             questionArray[i] = Integer.toString(arrayForUser[i]);
