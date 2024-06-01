@@ -9,6 +9,7 @@ public class GameGCD {
 
     public static void dataEntry() {
         String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
+        String rules = "Find the greatest common divisor of given numbers.";
         var j = 0;
         var i = 0;
         for (i = 0; i < STEPS; i++) {
@@ -21,9 +22,7 @@ public class GameGCD {
             dateForGame[i][j] = String.valueOf(answer);
             j = 0;
         }
-        dateForGame[STEPS][j] = "Rules";
-        dateForGame[STEPS][j + 1] = "Find the greatest common divisor of given numbers.";
-        Engine.playWithUser(dateForGame);
+        Engine.playWithUser(dateForGame, rules);
     }
 
     private static int calculation(int numberOne, int numberTwo) {

@@ -15,11 +15,11 @@ public class Engine {
         System.out.println("Hello, " + USERNAME + "!");
     }
 
-    public static void playWithUser(String[][] dateForGame) {
+    public static void playWithUser(String[][] dateForGame, String rules) {
         Scanner scanner = new Scanner(System.in);
         var j = 0;
-        System.out.println(dateForGame[STEPS][j + 1]);
-        for (var i = 0; i < STEPS; i++) {
+        System.out.println(rules);
+        for (var i = 0; i < dateForGame.length - 1; i++) {
             j = 0;
             System.out.println("Question: " + dateForGame[i][j]);
             String answerUser = scanner.next();

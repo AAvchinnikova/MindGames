@@ -9,6 +9,7 @@ public class GameEven {
 
     public static void dataEntry() {
         String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
+        String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         var j = 0;
         var i = 0;
         for (i = 0; i < STEPS; i++) {
@@ -25,9 +26,7 @@ public class GameEven {
             dateForGame[i][j] = answer;
             j = 0;
         }
-        dateForGame[STEPS][j] = "Rules";
-        dateForGame[STEPS][j + 1] = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        Engine.playWithUser(dateForGame);
+        Engine.playWithUser(dateForGame, rules);
     }
     private static boolean isEven(int number) {
         return number % 2 == 0;

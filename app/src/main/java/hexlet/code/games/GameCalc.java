@@ -9,6 +9,7 @@ public class GameCalc {
     static final int NUMBERCHAR = 2;
 
     public static void dataEntry() {
+        String rules = "What is the result of the expression?";
         String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
         var j = 0;
         var i = 0;
@@ -22,9 +23,7 @@ public class GameCalc {
             dateForGame[i][j] = String.valueOf(answer);
             j = 0;
         }
-        dateForGame[STEPS][j] = "Rules";
-        dateForGame[STEPS][j + 1] = "What is the result of the expression?";
-        Engine.playWithUser(dateForGame);
+        Engine.playWithUser(dateForGame, rules);
     }
 
     private static String prepareQuestion() {

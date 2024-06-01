@@ -11,6 +11,7 @@ public class GameProgression {
 
     public static void dataEntry() {
         String[][] dateForGame = new String[STEPS + 1][NUMBERARRAY];
+        String rules = "What number is missing in the progression?";
         var j = 0;
         for (var i = 0; i < STEPS; i++) {
             int numberSize = Utils.getRandomInt(MINSIZEARRAY, MAXSIZEARRAY);
@@ -23,9 +24,7 @@ public class GameProgression {
             dateForGame[i][j] = question;
             dateForGame[i][j + 1] = answer;
         }
-        dateForGame[STEPS][j] = "Rules";
-        dateForGame[STEPS][j + 1] = "What number is missing in the progression?";
-        Engine.playWithUser(dateForGame);
+        Engine.playWithUser(dateForGame, rules);
     }
 
     private static int[] makeProgression(int numberSize, int firstNumber, int step) {
