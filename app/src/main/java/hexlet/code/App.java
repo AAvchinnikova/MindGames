@@ -1,10 +1,11 @@
 package hexlet.code;
 
-import hexlet.code.games.GameCalc;
-import hexlet.code.games.GameEven;
-import hexlet.code.games.GameGCD;
-import hexlet.code.games.GamePrime;
-import hexlet.code.games.GameProgression;
+import hexlet.code.games.ParityCheck;
+import hexlet.code.games.Calculator;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
+
 import java.util.Scanner;
 
 public class App {
@@ -27,19 +28,19 @@ public class App {
                     Cli.console();
                     break;
                 case "2":
-                    GameEven.dataEntry();
+                    ParityCheck.dataEntry();
                     break;
                 case "3":
-                    GameCalc.dataEntry();
+                    Calculator.dataEntry();
                     break;
                 case "4":
-                    GameGCD.dataEntry();
+                    GCD.dataEntry();
                     break;
                 case "5":
-                    GameProgression.dataEntry();
+                    Progression.dataEntry();
                     break;
                 case "6":
-                    GamePrime.dataEntry();
+                    Prime.dataEntry();
                     break;
                 default:
                     System.out.println("Not the correct choice");

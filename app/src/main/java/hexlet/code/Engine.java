@@ -1,39 +1,37 @@
 package hexlet.code;
-
 import java.util.Scanner;
 
 public class Engine {
-    private static final String USERNAME;
-    public static final int STEPS = 3;
-    public static final int NUMBERARRAY = 2;
-
-    static {
+    public static final int ROUNDS = 3;
+    public static final int INDEX_RESULT = 1;
+    public static final int INDEX_QUESTION = 0;
+    public static final int QUESTION_AND_ANSWER = 2;
+    public static void communication(String description, String[][] roundsData) {
         Scanner scanner = new Scanner(System.in);
+        final String wrongAnswer = " is wrong answer ;(. Correct answer was ";
+        //final String wrongAnswer2 = "Let's try again, ";
+
         System.out.println("\nWelcome to the Brain Games!");
-        System.out.println("May I have your name?");
-        USERNAME = scanner.next();
-        System.out.println("Hello, " + USERNAME + "!");
-    }
+        System.out.print("May I have your name? ");
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
 
-    public static void playWithUser(String[][] dateForGame, String rules) {
-        Scanner scanner = new Scanner(System.in);
-        var j = 0;
-        System.out.println(rules);
-        for (var i = 0; i < dateForGame.length - 1; i++) {
-            j = 0;
-            System.out.println("Question: " + dateForGame[i][j]);
-            String answerUser = scanner.next();
-            j += 1;
-            if (answerUser.equals(dateForGame[i][j])) {
-                System.out.println("Your answer: " + answerUser);
+        System.out.println(description);
+
+        for (String[] roundData : roundsData) {
+            System.out.println("Question: " + roundData[INDEX_QUESTION]);
+            System.out.print("Your answer: ");
+            String answer = scanner.next();
+
+            if (answer.equals(roundData[INDEX_RESULT])) {
                 System.out.println("Correct!");
             } else {
-                System.out.println(answerUser + " is wrong answer ;(. Correct answer was "
-                        + dateForGame[i][j] + ".");
-                System.out.println("Let's try again, " + USERNAME + "!");
+                System.out.println("'" + answer + "'" + wrongAnswer + "'" + roundData[INDEX_RESULT] + "'");
+                System.out.println("Let's try again, " + userName + "!");
+                scanner.close();
                 return;
             }
         }
-        System.out.println("Congratulations, " + USERNAME + "!");
+        System.out.println("Congratulations, " + userName + "!");
     }
 }
